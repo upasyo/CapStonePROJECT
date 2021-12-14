@@ -1,0 +1,585 @@
+    <!DOCTYPE html>
+    <html lang="en-US"><head>
+ 
+    <script src="p5.js"></script>
+    <script src="p5.sound.js"></script>
+    <script src="p5.sound.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="This Game is Made by Upasyo Kushari. Click here to play the Game.">
+    <meta name="keywords" content="Elizabeth's Queen Hunting Game">
+    <meta name="author" content="Upasyo Kushari">
+    <title>Elizabeth's Diamond Crown Hunting Game</title>
+    <script src="js/Code.js"></script>
+    <script src="js/Security.js"></script>
+    <script src="js/Game.js"></script>
+    <script src="p5.play.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <base target="_blank"/>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,500,700" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+ 
+
+   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <!-- Latest compiled and minified CSS -->
+<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">-->
+
+<!-- Optional theme -->
+<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">-->
+
+<!-- Latest compiled and minified JavaScript -->
+<!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>-->
+    <meta charset="UTF-8">
+
+    </head>
+ 
+   <body background="https://i.postimg.cc/VNT2s4bx/Whatsapp-Background.png" id="body2">
+     <script>
+
+  </script>
+    <div class ="txt">
+    <center>Queen Elizabeth's Diamond Crown Hunting</center>
+    </div>
+    <center>
+    <div id="htw">Rate The Game by Giving Stars :-</div>
+  </center>
+<style>
+  #htw{
+    top:50%;
+  }
+</style>
+    <section class='rating-widget'>
+  
+        <!-- Rating Stars Box -->
+        <div class='rating-stars text-center'>
+          <ul id='stars'>
+            <li class='star' title='Poor' data-value='1'>
+              <i class="fa fa-star fa-fw"></i>
+            </li>
+            <li class='star' title='Fair' data-value='2'>
+              <i class='fa fa-star fa-fw'></i>
+            </li>
+            <li class='star' title='Good' data-value='3'>
+              <i class='fa fa-star fa-fw'></i>
+            </li>
+            <li class='star' title='Excellent' data-value='4'>
+              <i class='fa fa-star fa-fw'></i>
+            </li>
+            <li class='star' title='WOW!!!' data-value='5'>
+              <i class='fa fa-star fa-fw'></i>
+            </li>
+          </ul>
+        </div>
+        
+      <div class='success-box'>
+          <div class='clearfix'></div>
+          <img id="imgg" alt='tick image' title="Correct sign" width='32'src='data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCA0MjYuNjY3IDQyNi42NjciIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDQyNi42NjcgNDI2LjY2NzsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHdpZHRoPSI1MTJweCIgaGVpZ2h0PSI1MTJweCI+CjxwYXRoIHN0eWxlPSJmaWxsOiM2QUMyNTk7IiBkPSJNMjEzLjMzMywwQzk1LjUxOCwwLDAsOTUuNTE0LDAsMjEzLjMzM3M5NS41MTgsMjEzLjMzMywyMTMuMzMzLDIxMy4zMzMgIGMxMTcuODI4LDAsMjEzLjMzMy05NS41MTQsMjEzLjMzMy0yMTMuMzMzUzMzMS4xNTcsMCwyMTMuMzMzLDB6IE0xNzQuMTk5LDMyMi45MThsLTkzLjkzNS05My45MzFsMzEuMzA5LTMxLjMwOWw2Mi42MjYsNjIuNjIyICBsMTQwLjg5NC0xNDAuODk4bDMxLjMwOSwzMS4zMDlMMTc0LjE5OSwzMjIuOTE4eiIvPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K'/>
+          <div class='text-message'></div>
+          <div class='clearfix'></div>
+      </div>
+        
+      
+        
+       </section>
+       <script>
+        $(".rating-widget").hide();
+        $("#htw").hide();
+      </script>
+             <div id="button_1">
+              <a type="button" id="whatsapp_share_button"  target="_blank" class="btn btn-success  btn-block">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
+              <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
+              </svg>
+              <span>Share via Whatsapp</span>
+            </a>
+              </div>
+                    
+              <div id="button_2">
+              <a type="button" id="facebook_share_button"  target="_blank" class="btn btn-primary  btn-block">
+                
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="35" fill="currentColor" <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+                <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+              </svg> 
+              <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
+              </svg>
+             <span> Share via Facebook</span>
+            </a>
+              </div>
+             
+      <script>
+       
+        $('.success-box img').hide();
+        $('.success-box').hide();
+      $(document).ready(function(){
+        
+        /* 1. Visualizing things on Hover - See next part for action on click */
+        $('#stars li').on('mouseover', function(){
+          var onStar = parseInt($(this).data('value'), 10); // The star currently mouse on
+         
+          // Now highlight all the stars that's not after the current hovered star
+          $(this).parent().children('li.star').each(function(e){
+            if (e < onStar) {
+              $(this).addClass('hover');
+            }
+            else {
+              $(this).removeClass('hover');
+            }
+          });
+          
+        }).on('mouseout', function(){
+          $(this).parent().children('li.star').each(function(e){
+            $(this).removeClass('hover');
+          });
+        });
+        
+        
+        /* 2. Action to perform on click */
+        $('#stars li').on('click', function(){
+          //checkingCookie();
+          var onStar = parseInt($(this).data('value'), 10); // The star currently selected
+          var stars = $(this).parent().children('li.star');
+          
+          for (i = 0; i < stars.length; i++) {
+            $(stars[i]).removeClass('selected');
+          }
+          
+          for (i = 0; i < onStar; i++) {
+            $(stars[i]).addClass('selected');
+          }
+          
+          // JUST RESPONSE (Not needed)
+
+          var ratingValue = parseInt($('#stars li.selected').last().data('value'), 10);
+          var msg = "";
+          if (ratingValue > 2 && usertaking===null || ratingValue > 2 && usertaking===undefined) {
+              msg = "Thank you! You rated this Game as " + ratingValue + " stars.";
+          }
+         else
+          if ( usertaking!==null && ratingValue > 2  || usertaking!==undefined) {
+              msg = "Thank you "+ usertaking.toUpperCase() +"! You rated this Game as " + ratingValue + " stars.";
+          }
+          else if(ratingValue===1){
+            msg = "So Sorry for this response . You rated this " + ratingValue + " star.";
+          } else if(ratingValue===2) {
+              msg = "We will improve ourselves. You rated this " + ratingValue + " stars.";
+          }
+          responseMessage(msg);
+          
+        });
+        
+      });
+      
+      
+      function responseMessage(msg) {
+        $('.success-box').fadeIn(200);  
+        $('.success-box div.text-message').html("<span><b>" + msg + "</b></span>");
+        $('ul').remove();
+        $('.rating-stars').css("margin-top","20%");
+        $('.success-box img').show();
+        $('.success-box').show();
+
+      }
+  
+      </script>  
+
+      <center>
+        <div id="text"></div>
+        </center>
+        <script>
+          var txt=document.getElementById("text");
+        
+        if($(window).width()<800){
+          $("body").remove();
+          txt.innerHTML="**It seems that you are using Mobile/Tablet. <br>Switch on to your Laptop/Desktop for better user experience";
+        }else if($(window).width()>800 && $(window).width()<1000){
+          $("body").remove();
+          txt.innerHTML="**It seems that your screen width is small. <br>Enlarge your Screen or switch on to other device for better user experience";
+        }else if($(window).width()>=1001){
+          $("body").show();
+        }else{
+          $("body").remove();
+          txt.innerHTML="Switch on the Desktop or Laptop whose width is more than 10 inch . <br> for better user experience";
+        }
+        </script>
+        
+        <noscript>
+          <style>
+
+            button{
+              display:none;
+            }
+            #text{
+              display:none;
+            }
+            h2{
+              color:red;
+            }
+            .rating-widget{
+              display:none;
+            }
+            .butt{
+               display:none;
+            }
+            #htw{
+              display:none;
+            }
+          </style>
+          <script>
+            var isChrome = !!window.chrome; // "!!" converts the object to a boolean value
+          console.log(isChrome); // Just to visualize what's happening
+          
+          /* Example: User uses Firefox, therefore isChrome is false; alert get's triggered */
+          if (isChrome !== true) { 
+            alert("Please use Google Chrome to access this site.\nSome key features do not work in browsers other than Chrome.");
+          }
+              </script>
+          
+          <center>
+            <h2>
+          Enable Javascript on your Browser to Continue to Play the Game
+            </h2>
+        </center>
+           </noscript>
+           <style>
+            #button_1{
+                
+            left:55%;
+             top:60%;
+            position:absolute;
+            text-align: center;
+            font-size: 16px;
+            color:white;
+            
+             -webkit-user-select: none; 
+             /* Safari */
+            -ms-user-select: none; 
+            /* IE 10 and IE 11 */
+            user-select: none; 
+            /* Standard syntax */
+            }
+            </style>
+   
+          
+   
+
+      <style>
+     
+      
+      * {
+        -webkit-box-sizing:border-box;
+        -moz-box-sizing:border-box;
+        box-sizing:border-box;
+      }
+      
+      *:before, *:after {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      }
+      
+      .clearfix {
+        clear:both;
+      }
+      
+      .text-center {text-align:center;}
+      .text-message{
+        text-align:center;
+      }
+      
+      
+      pre {
+      display: block;
+      padding: 9.5px;
+      margin: 0 0 10px;
+      font-size: 13px;
+      line-height: 1.42857143;
+      color: #333;
+      word-break: break-all;
+      word-wrap: break-word;
+      background-color: #F5F5F5;
+      border: 1px solid #CCC;
+      border-radius: 4px;
+    
+      }
+      #imgg{
+        margin-left:15%;
+      }
+      
+      
+      .new-react-version {
+        padding: 20px 20px;
+        border: 1px solid #eee;
+        border-radius: 20px;
+        box-shadow: 0 2px 12px 0 rgba(0,0,0,0.1);
+        
+        text-align: center;
+        font-size: 14px;
+        line-height: 1.7;
+      }
+      
+      .new-react-version .react-svg-logo {
+        text-align: center;
+        max-width: 60px;
+        margin: 20px auto;
+        margin-top: 0;
+      }
+      
+      
+      
+      
+      
+      .success-box {
+      
+        padding:10px 10px;
+        border:1px solid #eee;
+        background:#f9f9f9;
+        max-width:680px;
+        margin:0 auto;
+        padding:0 20px;
+        height:50px;
+      }
+      
+      .success-box img {
+        margin-right:10px;
+        margin-top:5px;
+        display:inline-block;
+        vertical-align:top;
+      }
+      
+      .success-box > div {
+        vertical-align:top;
+        display:inline-block;
+        margin-top:1.8%;
+      }
+      
+      
+      
+      /* Rating Star Widgets Style */
+      .rating-stars ul {
+        list-style-type:none;
+        padding:0px;
+      margin-top:20%;
+      }
+      .rating-stars ab {
+        list-style-type:none;
+        padding:0px;
+      margin-top:20%;
+      }
+      .rating-stars ul > li.star {
+        display:inline-block;
+        
+      }
+      
+      /* Idle State of the stars */
+      .rating-stars ul > li.star > i.fa {
+        font-size:2.5em; /* Change the size of the stars */
+        color:rgb(157, 206, 207); /* Color on idle state */
+       
+      }
+      
+      /* Hover state of the stars */
+      .rating-stars ul > li.star.hover > i.fa {
+        color:#FFCC36;
+      }
+      
+      /* Selected state of the stars */
+      .rating-stars ul > li.star.selected > i.fa {
+        color:#FF912C;
+        
+      }
+      
+      </style>
+<script>
+  /* 
+  function settingCookie(cname,cvalue,exdays) {
+    const d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    let expires = "expires=" + d.toGMTString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+  }
+  
+  function gettingCookie(cname) {
+    let name = cname + "=";
+    let decodedCookie = decodeURIComponent(document.cookie);
+    let ca = decodedCookie.split(';');
+    for(let i = 0; i < ca.length; i++) {
+      let c = ca[i];
+      while (c.charAt(0) == ' ') {
+        c = c.substring(1);
+      }
+      if (c.indexOf(name) == 0) {
+        return c.substring(name.length, c.length);
+      }
+    }
+    return "";
+  }
+  
+  function checkingCookie() {
+   
+     var user = gettingCookie("gamePlayed");
+
+      settingCookie("gamePlayed", user, 30);
+      $(".rating-widget").remove();
+      $("canvas").remove();
+      $("#btn-8").remove();
+  }*/
+</script>
+
+
+
+<div id="cans">
+    <script src="sketch.js"></script>
+    <a href="info.html" target="_blank" class="butt blue"><div class="light"></div>View Instructions</a>
+</div>
+
+<script>
+$("#whatsapp_share_button").click(function(){
+  console.log(points_score);
+ if(usertaking!==undefined && points_score!==undefined){
+ var a="https://api.whatsapp.com/send?text= Hi! *"+usertaking.toUpperCase()+"* has won the Diamond as well as the Game with a score of *"+points_score+"* points . You Could also stand a chance to win the game. Click on the Link below to Play the Game:- https://bit.ly/DiamondCrownGame";
+ var btn1=document.getElementById("whatsapp_share_button");
+ btn1.setAttribute("href",a);
+  }else if(usertaking==undefined ){
+    var b="https://api.whatsapp.com/send?text= Hi! I have won the Diamond as well as the Game with a score of *"+points_score+"* points . You Could also stand a chance to win the game. Click on the Link below to Play the Game:- https://bit.ly/DiamondCrownGame";
+ var btn2=document.getElementById("whatsapp_share_button");
+ btn2.setAttribute("href",b);
+  }
+
+})
+
+$("#facebook_share_button").click(function(){
+  console.log(points_score);
+ if(usertaking!==undefined && usertaking!==null && points_score!==undefined){
+ var c="https://www.facebook.com/sharer/sharer.php?u=Hi! "+usertaking.toUpperCase()+" has won the Diamond as well as the Game with a score of "+points_score+" . You Could also stand a chance to win the game. Click on the Link below to Play the Game:- https://bit.ly/DiamondCrownGame";
+ var btn3=document.getElementById("facebook_share_button");
+ btn3.setAttribute("href",c);
+  }else if(usertaking==undefined && usertaking==null ){
+    var d="https://www.facebook.com/sharer/sharer.php?u=Hi! I have won the Diamond as well as the Game with a score of "+points_score+" . You Could also stand a chance to win the game. Click on the Link below to Play the Game:- https://bit.ly/DiamondCrownGame";
+ var btn4=document.getElementById("facebook_share_button");
+ btn4.setAttribute("href",d);
+  }
+
+})
+
+
+
+
+</script>
+
+<center>
+  <p id="p1"></p>
+<div id="copy_btn">
+  <a type="button" class="btn btn-info btn-lg" onclick="copyToClipboard('#p1')" id="hello">
+  <img src="https://main-ui-8b1jkv2k0.whjr.dev/static/media/copyButton.1d055e06.svg" alt="copy icon">
+  <span id="copy_text"> Copy Invite Text To Clipboard</span>
+  </a>
+   </div>
+   <div id="btn-8">
+   <a type="button" id="btn-7" class="btn btn-danger btn-lg text-white" onclick="reload()" >Reload the Page for Playing Again</a>
+  </div>
+  <style>
+    #btn-7{
+      width:300px;
+      top:85%;
+      right:30%;
+    }
+  </style>
+  </center>
+  
+  <script>
+    $("#btn-7").hide();
+    function reload(){
+      location.reload(1)
+    }
+    $("#p1").hide();
+  $('#hello').click(function() { 
+
+  $('#copy_text').replaceWith("Invite Successfully Copied!!");
+  
+  });
+
+ 
+  function copyToClipboard(element) {
+    var $temp = $("<input>");
+    $("body").append($temp);
+    $temp.val($(element).text()).select();
+    document.execCommand("copy");
+    $temp.remove();
+  }
+  $("#whatsapp_share_button").hide();
+  $("#facebook_share_button").hide();
+  $("#copy_btn").hide();
+
+
+
+
+  
+  </script>
+
+    <script>/*
+var myURL = 'https://example.com/search';
+
+myURL = updateUrl(myURL,'name','usertaking');
+console.log(myURL);
+//added location.../search?location=california#fragment
+
+myURL = updateUrl(myURL,'name','new york');
+console.log('updated location...' + myURL);
+//updated location.../search?location=new%20york#fragment
+
+myURL = updateUrl(myURL,'name');
+console.log('removed location...' + myURL);
+//removed location.../search#fragmentrch
+
+function updateUrl(url,key,value){
+      if(value!==undefined){
+        value = encodeURI(value);
+      }
+      var hashIndex = url.indexOf("#")|0;
+      if (hashIndex === -1) hashIndex = url.length|0;
+      var urls = url.substring(0, hashIndex).split('?');
+      var baseUrl = urls[0];
+      var parameters = '';
+      var outPara = {};
+      if(urls.length>1){
+          parameters = urls[1];
+      }
+      if(parameters!==''){
+        parameters = parameters.split('&');
+        for(k in parameters){
+          var keyVal = parameters[k];
+          keyVal = keyVal.split('=');
+          var ekey = keyVal[0];
+          var evalue = '';
+          if(keyVal.length>1){
+              evalue = keyVal[1];
+          }
+          outPara[ekey] = evalue;
+        }
+      }
+
+      if(value!==undefined){
+        outPara[key] = value;
+      }else{
+        delete outPara[key];
+      }
+      parameters = [];
+      for(var k in outPara){
+        parameters.push(k + '=' + outPara[k]);
+      }
+
+      var finalUrl = baseUrl;
+
+      if(parameters.length>0){
+        finalUrl += '?' + parameters.join('?'); 
+      }
+
+      return finalUrl + url.substring(hashIndex); 
+  }*/
+    </script>
+  </body>
+  </html>
