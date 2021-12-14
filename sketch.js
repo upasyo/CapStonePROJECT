@@ -4,6 +4,7 @@ var game;
 var security;
 var image1,image2,image3,image4,image5;
 var game_ambience;
+var robot,robot_Img;
 var restart,restart_Img;
 var edges;
 var user,suma,sumb;
@@ -12,10 +13,10 @@ var health,health_score,health_Img;
 var key,key_score,key_Img;
 var points,points_score,points_Img,points2_1,points2_2,points2_3,points2_4,points2_5,points_Img2,pointsGroup1;
 var points1_1,points1_2, pointsGroup2;
-var robot,robot_Img;
 var usertaking;
 var diamond,diamond_Img;
-var ground1,ground2,ground3,ground4;
+var score_sound;
+var ground1,ground2,ground3,ground4,ground5,ground6,ground7;
 var ball1,ball1_Img,ball2,ball3,ball4,ball5,ball6,ball7,ball8;
 var box1,box2,box3,box4,box5,box6,box7,box8,box9,box10,box11,box12,box13;
 var door,door_Img,wood_Img,wood_Img2;
@@ -23,9 +24,14 @@ var ballsGroup,lazersGroup,toysGroup;
 var lazer1, lazer2,lazer3,lazer4 ,grazer1,grazer2;
 var babytoy1,babytoy1_Img,babytoy2,babytoy2_Img,babytoy3,babytoy3_Img,babytoy4,babytoy4_Img,babytoy5,babytoy5_Img,babytoy6,bbabytoy6_Img,babytoy7,babytoy7_Img,babytoy8,babytoy8_Img,babytoy9,babytoy9_Img,babytoy10,babytoy10_Img;
 var lazerImg;
-var gameState =0;
+var blocktoblock,block66,block67;
+var ballhit_sound, lazerhit_sound;
+var gameState = 0;
  function preload(){
 game_ambience=loadSound("sound/game_ambience.mp3");
+score_sound=loadSound("sound/scoreincrease.mp3");
+ballhit_sound=loadSound("sound/ballhit.mp3");
+lazerhit_sound=loadSound("sound/lazersound.mp3");
 image1=loadImage("images/firstbg.jpg");
 image2=loadImage("images/road.png");
 image3=loadImage("https://i.postimg.cc/2yzKx85t/istockphoto-1287348587-612x612.jpg");
@@ -100,28 +106,51 @@ security = new Security();
 
 
 
+
+ 
 if(gameState===0){
   //usertaking=prompt("Enter Your Name");
+  
   checkCookie();
-  if(usertaking===null){
-    alert("Enter your First Name first to play the game Do not Press the Cancel Button");
+
+ if(usertaking===undefined && usertaking==null){
+    alert("Enter your First Name first to play the game Do not Press the Cancel Button . Press the Refresh Button on your Browser to Enter your Name & to Play.");
   }
+
+
+  
 }
-
-
- // game_ambience.play();
- // game_ambience.loop();
-  if(box12.x===width/1.5 && gameState===3){
+if(usertaking!==null && usertaking!==undefined){
+window.speechSynthesis.onvoiceschanged = function() {
+  var voices9 = window.speechSynthesis.getVoices();
+  var utterance9 = new SpeechSynthesisUtterance('Welcome '+usertaking+'. Read the instructions carefully before playing the game by pressing the instruction button , best of luck , Go Ahead');
+  utterance9.voice = voices9[8];
+  utterance9.lang = voices9[8].lang;
+  window.speechSynthesis.speak(utterance9);
+}
+}
+/*game_ambience.play();
+  game_ambience.loop();
+  game_ambience.setVolume(0.2);*/
+  /*if(box12.x===width/1.5 && gameState===3){
 
 alert("Write without giving any gap such as NEWDELHI")
    
-  }
+  }*/
  
-
 }
 
 function draw(){
+
+console.log(usertaking);
   background(255);
+
+ 
+  if(points_score<=20 && health_score>0){
+    points_score=100;
+  }else if(points_score>=800 && health_score>0){
+    points_score=300;
+  }
   //game_ambience.play()
   //Creating the alert with the alertIcon:"icon.png"
   //lazer1.velocityY=round(points_score*5);
@@ -165,7 +194,7 @@ lazersGroup.add(lazer4);
   babytoy6.visible=false;
   babytoy1.visible=false;
   babytoy1.visible=false;*/
-console.log(gameState)
+console.log(gameState);
 edges=createEdgeSprites();
 lazer1.bounceOff(box3);
 lazer1.bounceOff(box5);
@@ -232,12 +261,14 @@ background(image1);
 
 
 
-     key.visible=false;
+    
    game.play();
   }else if (gameState===2){
     background(image2);
+    //Decreasing Score on Touching Balls
     if(robot.isTouching(ballsGroup) ){
       health_score=health_score-1;
+      points_score-=10;
     }
     if(door.x!==width/2 && door.y!==height/2){
       fill("red");
@@ -290,19 +321,37 @@ background(image1);
      
 
 
-     key.visible=true;
+     
   
     game.played();
    
-  }else 
-  if(gameState===3){
+  }else if(gameState===6){
+    background(image2);
+    ball1.remove();
+    ball3.remove();
+    ball4.remove();
+    ball5.remove();
+    ball6.remove();
+    game.playafter();
+    if(door.x!==width/2 && door.y!==height/2){
+      fill("red");
+      textSize(12);
+      text("!! Not Allowed to Go on this Way",width/30,height/2);
+      text("!! Not Allowed to Go on this Way",width/1.18,height/2)
+    }
+  }
+  else if(gameState===3){
     background(image3);
     lazersGroup.setVisibleEach(true);
     toysGroup.setVisibleEach(true);
 
     points.visible=true;
     health.visible=true;
-
+    ball1.remove();
+    ball3.remove();
+    ball4.remove();
+    ball5.remove();
+    ball6.remove();
     box3.visible=true;
     box4.visible=true;
     box5.visible=true;
@@ -372,6 +421,7 @@ if(gameState!=4 && gameState!=0 && gameState!=1 && gameState!=5){
   fill('purple');
   text( ' : '+points_score,width/9,height/14);
 }
+
 }
 
 function setCookie(cname,cvalue,exdays) {
@@ -398,14 +448,33 @@ function getCookie(cname) {
 }
 
 function checkCookie() {
-   usertaking = getCookie("username");
+ 
+   usertaking = getCookie("playerName");
   if (usertaking != "") {
-    
+ 
   } else {
-     usertaking = prompt("Please enter your First Name to Play the Game :","");
-     if (usertaking != "" && usertaking != null) {
-       setCookie("username", usertaking, 30);
-     }
+    
+  //if(usertaking.indexOf(' ')===0 && usertaking.length>=5 && usertaking.length<13){
+      //alert("Only First Name Only Above 5 Characters without any gap and refresh the page again to enter your name and to play the game.");
+      if(gameState===0)
+      usertaking = prompt("Please enter your First Name Only to Play the Game . Do not Enter more than 12 characters or less than 4 characters or Donot Enter any Number.  Ex:- Tim instead of Tim John:","");
+    //}
+    
+   
+
+    // if( usertaking.length>=4 && usertaking.length!==0 && usertaking.length<=13 && usertaking.indexOf(' ')==0 && usertaking.length!==0 ){
+      if(usertaking!==null && usertaking!==" "  && usertaking.length>=4 && usertaking.length<=15  && usertaking.indexOf(' ') > 0===false && /^[a-zA-Z]/.test(usertaking)===true ){
+    setCookie("playerName", usertaking, 30);
+      
+     //}
+    }else{
+      location.reload();
+    }
+
+    
+  /*if(usertaking==null){
+    alert('Donot Press the Cancel Button & do not go to another tab . Refreshthe Page Again to Register your Name to the database and play the Game');
+  }*/
   }
 }
 
