@@ -1,28 +1,249 @@
 <!DOCTYPE html><html lang="en"><head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="This Game is Made by Upasyo Kushari. Click here to play the Game.">
+    <meta name="keywords" content="Elizabeth's Queen Hunting Game">
+    <meta name="author" content="Upasyo Kushari">
+    <title>Elizabeth's Diamond Crown Hunting Game</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+
+
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+  </head>
+
+    <body background="https://i.postimg.cc/VNT2s4bx/Whatsapp-Background.png"onload=“fullScreen(index.html’);>
+        <div class ="txt" style="font-size:25px">
+            <center>Queen Elizabeth's Diamond Crown Hunting</center>
+        </div>
+         
+<CENTER>
+        <button id="play"class="custom-btn btn-5" onClick="window.open('game.html', '_blank', 'location=yes,height=1050, fullscreen=yes,width=2000,scrollbars=yes,status=yes'); upo()" title="Play the Game"><span>Play the Game</span></button>
+      </CENTER>
+        
+       
+
+
+<script>
+
+//Post your code
+
+ function upo() {
+	window.moveTo(0, 0);
+	window.resizeTo(screen.Width, screen.Height);
+}
+
+
+  var isChrome = !!window.chrome; // "!!" converts the object to a boolean value
+console.log(isChrome); // Just to visualize what's happening
+
+/* Example: User uses Firefox, therefore isChrome is false; alert get's triggered */
+if (isChrome !== true) { 
+  alert("Please use Google Chrome to access this site.\nSome key features do not work in browsers other than Chrome.");
+}
+
+</script>
  
-  <script src="p5.js"></script>
-  <script src="p5.sound.js"></script>
-  <script src="p5.sound.min.js"></script>
-  
-  <meta name="description" content="This Game is Made by Upasyo Kushari. Click here to play the Game.">
-  <meta name="keywords" content="Elizabeth's Queen Hunting Game">
-  <meta name="author" content="Upasyo Kushari">
-  <title>Elizabeth's Diamond Crown Hunting Game</title>
-  <script src="js/Code.js"></script>
-  <script src="js/Security.js"></script>
-  <script src="js/Game.js"></script>
-  <script src="p5.play.js"></script>
-  <link rel="stylesheet" type="text/css" href="style.css">
-  <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+ <style>
+   button {
+  margin: 20px;
+  margin-top:12%;
+ 
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-zoom: none;
+  -webkit-user-drag: none;
+}
 
-<meta charset="UTF-8">
+@media screen and (max-width:999px) {
+  button {
+  margin: 20px;
+  margin-top:20%;
+ 
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-zoom: none;
+  -webkit-user-drag: none;
+}
+.btn-6 {
+  width: 170px;
+  height: 50px;
+  line-height: 42px;
+  padding: 0;
+  border: none;
+  cursor:no-drop;
+  font-size:18px;
+  background:#D3D3D3;
+}
+}
+.custom-btn {
+  width: 130px;
+  height: 40px;
+  color: #fff;
+  border-radius: 10px;
+  padding: 10px 25px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
 
-</head>
-<body background="https://i.postimg.cc/VNT2s4bx/Whatsapp-Background.png">
-  <div class ="txt">
-  <center>Queen Elizabeth's Diamond Crown Hunting</center>
-  </div>
-  <script src="sketch.js"></script>
-  <a href="info.html" target="_blank" class="button blue"><div class="light"></div>View Instructions</a>
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+   box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+   7px 7px 20px 0px rgba(0,0,0,.1),
+   4px 4px 5px 0px rgba(0,0,0,.1);
+  outline: none;
+}
+
+
+/* 5 */
+.btn-5 {
+  width: 170px;
+  height: 50px;
+  line-height: 42px;
+  padding: 0;
+  border: none;
+  font-size:18px;
+  background: rgb(255,27,0);
+background: linear-gradient(0deg, rgba(255,151,0,1) 0%, rgba(251,75,2,1) 100%);
+}
+.btn-6 {
+  width: 170px;
+  height: 50px;
+  line-height: 42px;
+  padding: 0;
+  border: none;
+  cursor:no-drop;
+  font-size:18px;
+  background:#D3D3D3;
+}
+@media screen and (max-device-width: 800px) {
+  .btn-6 {
+  width: 170px;
+  height: 50px;
+  line-height: 42px;
+  padding: 0;
+  border: none;
+  cursor:no-drop;
+  font-size:18px;
+  background:#D3D3D3;
+}
+}
+.btn-5:hover {
+  color: #f0094a;
+  background: transparent;
+   box-shadow:none;
+}
+.btn-5:before,
+.btn-5:after{
+  content:'';
+  position:absolute;
+  top:0;
+  right:0;
+  height:2px;
+  width:0;
+  background: #f0094a;
+  box-shadow:
+   -1px -1px 5px 0px #fff,
+   7px 7px 20px 0px #0003,
+   4px 4px 5px 0px #0002;
+  transition:400ms ease all;
+}
+.btn-5:after{
+  right:inherit;
+  top:inherit;
+  left:0;
+  bottom:0;
+}
+.btn-5:hover:before,
+.btn-5:hover:after{
+  width:100%;
+  transition:800ms ease all;
+}
+
+
+ </style>
+<center>
+  <img id='ig' src='https://img.icons8.com/external-flatart-icons-flat-flatarticons/64/000000/external-tick-user-interface-flatart-icons-flat-flatarticons.png'/>
+<div id="text"></div>
+</center>
+<style>
+  #text{
+    color:rgb(235, 75, 75);
+  }
+  #ig{
+    height:40px;
+width:40px;
+    
+  }
+</style>
+<noscript>
+  <style>
+    button{
+      display:none;
+    }
+    #ig{
+      display:none;
+    }
+    #text{
+      display:none;
+    }
+    .btn-5{
+      display:none;
+    }
+    h2{
+      color:red;
+    }
+  </style>
+  <center>
+    <h2>
+  Enable Javascript on your Browser to Continue to Play the Game
+    </h2>
+</center>
+   </noscript>
+<script>
+  $('#ig').hide();
+  var txt=document.getElementById("text");
+  var btn=document.getElementById("play");
+
+  if($(window).width()<800){
+    btn.disabled=true;
+    $("#play").removeClass('btn-5')
+    $("#play").addClass('btn-6')
+    txt.innerHTML="**It seems that you are using Mobile/Tablet. <br>Switch on to your Laptop/Desktop for better user experience";
+  }else if($(window).width()>800 && $(window).width()<1000){
+    btn.disabled=true;
+    $("#play").removeClass('btn-5')
+    $("#play").addClass('btn-6')
+    txt.innerHTML="**It seems that your screen width is small. <br>Enlarge your Screen or switch on to other device for better user experience";
+  }else if($(window).width()>=1001 && $(window).width()<=2000){
+    txt.innerHTML=" Your Screen is Perfectly OK to Play the Game. <br>Click the Button Above to Play the Game 👆🏻";
+    txt.style.color="#008000";
+    $('#ig').show();
+  }else{
+    btn.disabled=true;
+    $("#play").removeClass('btn-5')
+    $("#play").addClass('btn-6')
+    txt.innerHTML="Switch on the Desktop or Laptop whose width is more than 10 inch . <br> for better user experience";
+  }
+  // Find the right method, call on correct element
+function launchFullScreen(element) {
+  if(element.requestFullScreen) {
+    element.requestFullScreen();
+  } else if(element.mozRequestFullScreen) {
+    element.mozRequestFullScreen();
+  } else if(element.webkitRequestFullScreen) {
+    element.webkitRequestFullScreen();
+  }
+}
+
+
+</script>
 </body>
-           </html>
+</html>
