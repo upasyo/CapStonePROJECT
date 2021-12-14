@@ -1,7 +1,17 @@
 html, body {
 	margin: 0;
 	padding: 0;
-	height: 100vh;
+	
+  }
+  canvas{
+    border:5px dotted orangered;
+  }
+  *{
+    user-zoom: none;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
   }
   .txt{
     position:static;
@@ -77,13 +87,13 @@ outline:0;
   a:hover:after{
     left: 100%;
   }*/
-  .button{
+  .butt{
     position:absolute;
-    height:1.2em;
+    height:2.5em;
     padding:10px 10px;
-    margin:18px 30px;
-    top:3px;
-    left:82%;
+    margin:28px 10px;
+    top:1px;
+    left:85%;
     cursor:pointer;
     display:inline-block;
     color:#FFF;
@@ -92,6 +102,7 @@ outline:0;
     background:#eee;
     border-radius:4px;
     line-height:1em;
+    text-align:center;
     border:1px solid #aaa;
     text-decoration:none;
       
@@ -104,14 +115,14 @@ outline:0;
         -webkit-user-select:none;
         -webkit-user-drag: none;
   }
-  .button:hover{
+  .butt:hover{
     -webkit-box-shadow:rgba(0,0,0,0.7) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
        -khtml-box-shadow:rgba(0,0,0,0.7) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
          -moz-box-shadow:rgba(0,0,0,0.7) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
            -o-box-shadow:rgba(0,0,0,0.7) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
               box-shadow:rgba(0,0,0,0.7) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
   }
-  .button:active {
+  .butt:active {
       -webkit-box-shadow: rgba(255,255,255,0.25) 0px 1px 0px, inset rgba(255,255,255,0.03) 0px 20px 0px, inset rgba(0,0,0,0.15) 0px -20px 20px, inset rgba(255,255,255,0.05) 0px 20px 20px;
        -khtml-box-shadow: rgba(255,255,255,0.25) 0px 1px 0px, inset rgba(255,255,255,0.03) 0px 20px 0px, inset rgba(0,0,0,0.15) 0px -20px 20px, inset rgba(255,255,255,0.05) 0px 20px 20px;
          -moz-box-shadow: rgba(255,255,255,0.25) 0px 1px 0px, inset rgba(255,255,255,0.03) 0px 20px 0px, inset rgba(0,0,0,0.15) 0px -20px 20px, inset rgba(255,255,255,0.05) 0px 20px 20px;
@@ -130,4 +141,194 @@ outline:0;
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7abcff', endColorstr='#4096ee',GradientType=0 ); /* IE6-9 */
   }
 
+
+  #button_1{
+      
+    left:50%;
+     width:40%;
+     top:60%;
+    position:absolute;
+    text-align: center;
+    font-size: 16px;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+    }
+  #button_2{
+      
+  left:58%;
+   width:40%;
+   top:60%;
+  position:absolute;
+  text-align: center;
+  font-size: 16px;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+  }
+ 
+
+
+@media only screen and (max-device-width: 1000px) {
+
+#button_1{
+      
+  left:10%;
+   width:80%;
+   top:59%;
+  position:fixed;
+  text-align: center;
+   
+  font-size: 16px;
+   -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+  }
+
+ 
+  #button_2{
+      
+  left:12%;
+   width:80%;
+   top:69%;
+  position:fixed;
+  text-align: center;
+  font-size: 16px;
+   -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+ 
+  }
   
+
+}
+
+#whatsapp_share_button{
+ right:115%;
+   width:320px;
+position:absolute;
+  text-align: center;
+   padding:5px;
+   padding-bottom:12px;
+margin:20px 50px;
+height:3.5em;
+   outline:0;
+   background:linear-gradient(45deg,#128C7E,#4cc78b);
+   border:0;
+   text-decoration:none;
+   COLOR:rgb(255, 255, 255);
+   cursor:pointer;
+   border-radius:10px;
+    /*vertical-align: center;*/ /* w.t.f? */
+    text-align: center;
+  font-size: 18px;
+  box-shadow: 4px 4px 4px #999;
+  transition:1s;
+   -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+#whatsapp_share_button:hover{
+  position:absolute;
+  right:115%;
+   width:322px;
+  text-align: center;
+  padding:5px;
+   padding-bottom:12px;
+   margin:20px 50px;
+   line-height:1em;
+   outline:0;
+   background:transparent;
+   color:#048a7a;
+   border:0;
+   cursor:pointer;
+   text-decoration:none;
+   border-radius:10px;
+   display: inline-block;
+   vertical-align: middle;
+    /*vertical-align: center;*/ /* w.t.f? */
+    text-align: center;
+  font-size: 18px;
+  -webkit-box-shadow:rgba(0,0,0,0.7) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
+     -khtml-box-shadow:rgba(0,0,0,0.7) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
+       -moz-box-shadow:rgba(0,0,0,0.7) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
+         -o-box-shadow:rgba(0,0,0,0.7) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
+            box-shadow:rgba(0,0,0,0.7) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
+  transition:1s;
+   -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+span{
+  text-align:center;
+  margin-bottom:30px;
+}
+svg{
+  position: relative;
+  top: 0.5em;
+  height: 2em;
+  width: 2em;
+ 
+}
+
+#facebook_share_button{
+  right:30%;
+   width:320px;
+position:absolute;
+  text-align: center;
+   padding:5px;
+   padding-bottom:12px;
+margin:20px 50px;
+height:3.5em;
+   outline:0;
+   background:linear-gradient(45deg,#286090,#2814d4);
+   border:0;
+   text-decoration:none;
+   COLOR:rgb(255, 255, 255);
+   cursor:pointer;
+   border-radius:10px;
+    /*vertical-align: center;*/ /* w.t.f? */
+    text-align: center;
+  font-size: 18px;
+  box-shadow: 4px 4px 4px #999;
+  transition:1s;
+   -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none;
+}
+#facebook_share_button:hover{
+  right:30%;
+   width:320px;
+position:absolute;
+  text-align: center;
+   padding:5px;
+   padding-bottom:12px;
+margin:20px 50px;
+height:3.5em;
+   outline:0;
+   background:transparent;
+   border:0;
+   text-decoration:none;
+   COLOR:#286090;
+   cursor:pointer;
+   border-radius:10px;
+    /*vertical-align: center;*/ /* w.t.f? */
+    text-align: center;
+  font-size: 18px;
+  -webkit-box-shadow:rgba(0,0,0,0.7) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
+     -khtml-box-shadow:rgba(0,0,0,0.7) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
+       -moz-box-shadow:rgba(0,0,0,0.7) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
+         -o-box-shadow:rgba(0,0,0,0.7) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
+            box-shadow:rgba(0,0,0,0.7) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
+  transition:1s;
+   -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none;
+}
+.btn{
+  position:absolute;
+   top:75%;
+   right:36%;
+}
+
+   
