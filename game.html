@@ -581,24 +581,27 @@ function updateUrl(url,key,value){
       return finalUrl + url.substring(hashIndex); 
   }*/
     </script>
-    <script>
-      $(document).ready(function(){
-         $(document).bind("contextmenu",function(e){
-            return false;
-         });
-      });
-      </script>
-       <script>
-        /*function check(e)
-        {
-        alert(e.keyCode);
-        }*/
-        document.onkeydown = function(e) {
-                if (e.ctrlKey && (e.keyCode === 67 || e.keyCode === 86 || e.keyCode === 85 || e.keyCode === 117)) {//Alt+c, Alt+v will also be disabled sadly.
-                    alert('not allowed');
-                }
-                return false;
-        };
-        </script>
+<script>
+  $(document).ready(function(){
+     $(document).bind("contextmenu",function(e){
+        return false;
+     });
+  });
+  </script>
+                 <script>
+                  /*function check(e)
+                  {
+                  alert(e.keyCode);
+                  }*/
+                  document.onkeydown = function(e) {
+                          if (e.ctrlKey && (e.keyCode === 67 || e.keyCode === 86 || e.keyCode === 85 || e.keyCode === 117)) {//Alt+c, Alt+v will also be disabled sadly.
+                            console.log("Not Allowed to inspect & to view the source code or resource code && copying ,pasting and cutting was disabled");
+                            return false;
+                          }else if (e.ctrlKey && e.keyCode === 82){
+                            return true;
+                          }
+                          return false;
+                  };
+                  </script>
   </body>
   </html>
