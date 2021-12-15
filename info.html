@@ -29,8 +29,39 @@
               <li>Milk</li>
             </ul>  
             <script>
-              
+            
+  var isChrome = !!window.chrome; // "!!" converts the object to a boolean value
+console.log(isChrome); // Just to visualize what's happening
+
+/* Example: User uses Firefox, therefore isChrome is false; alert get's triggered */
+if (isChrome !== true) { 
+  alert("Please use Google Chrome to access this site.\nSome key features do not work in browsers other than Chrome.");
+}
+   
+
             </script>
+<script>
+  $(document).ready(function(){
+     $(document).bind("contextmenu",function(e){
+        return false;
+     });
+  });
+  </script>
+                 <script>
+                  /*function check(e)
+                  {
+                  alert(e.keyCode);
+                  }*/
+                  document.onkeydown = function(e) {
+                          if (e.ctrlKey && (e.keyCode === 67 || e.keyCode === 86 || e.keyCode === 85 || e.keyCode === 117)) {//Alt+c, Alt+v will also be disabled sadly.
+                            console.log("Not Allowed to inspect & to view the source code or resource code && copying ,pasting and cutting was disabled");
+                            return false;
+                          }else if (e.ctrlKey && e.keyCode === 82){
+                            return true;
+                          }
+                          return false;
+                  };
+              </script>
             
 </body>
 </html>
