@@ -124,8 +124,8 @@ if(usertaking!==null && usertaking!==undefined){
 window.speechSynthesis.onvoiceschanged = function() {
   var voices9 = window.speechSynthesis.getVoices();
   var utterance9 = new SpeechSynthesisUtterance('Welcome '+usertaking+'. Read the instructions carefully before playing the game by pressing the instruction button , best of luck , Go Ahead');
-  utterance9.voice = voices9[8];
-  utterance9.lang = voices9[8].lang;
+  utterance9.voice = voices9[3];
+  utterance9.lang = voices9[4].lang;
   window.speechSynthesis.speak(utterance9);
 }
 }
