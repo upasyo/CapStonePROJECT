@@ -26,7 +26,7 @@ var babytoy1,babytoy1_Img,babytoy2,babytoy2_Img,babytoy3,babytoy3_Img,babytoy4,b
 var lazerImg;
 var blocktoblock,block66,block67;
 var ballhit_sound, lazerhit_sound;
-var gameState = 0;
+var gameState =0;
  function preload(){
 game_ambience=loadSound("sound/game_ambience.mp3");
 score_sound=loadSound("sound/scoreincrease.mp3");
@@ -374,7 +374,7 @@ if(gameState===0){
 
   
 }
-if(usertaking!==null && usertaking!==undefined){
+/*if(usertaking!==null && usertaking!==undefined){
 window.speechSynthesis.onvoiceschanged = function() {
   var voices9 = window.speechSynthesis.getVoices();
   var utterance9 = new SpeechSynthesisUtterance('Welcome '+usertaking+'. Read the instructions carefully before playing the game by pressing the instruction button , best of luck , Go Ahead');
@@ -382,7 +382,7 @@ window.speechSynthesis.onvoiceschanged = function() {
   utterance9.lang = voices9[4].lang;
   window.speechSynthesis.speak(utterance9);
 }
-}
+}*/
 /*game_ambience.play();
   game_ambience.loop();
   game_ambience.setVolume(0.2);*/
