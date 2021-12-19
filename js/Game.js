@@ -3,6 +3,12 @@ class Game{
       this.button=createButton("Click to Answer the Question");
       this.button.position(width/2.3,height/1.5);
       this.button.style("outline","0");
+      this.button.style("background-color","blue");
+      this.button.style("color","white");
+      this.button.style("border","none");
+      this.button.style("border-radius","10px");
+      this.button.style("width","100px");
+      this.button.style("height","30px");
 
       this.button3=createButton("SUBMIT");;
       this.button3.position(width/2.05,height/1.9);
@@ -14,6 +20,10 @@ class Game{
       this.button3.style("width","100px");
       this.button3.style("height","30px");
       this.button3.hide();
+
+      this.input=createInput();
+      this.input.position(width/2.14,height/2.2);
+      this.input.hide();
     }
     start(){
       restart=createSprite(width/1.9,height/1.4);
@@ -680,7 +690,7 @@ if(accessCode===parseInt(user)){
 }
 playing(){
   
-
+diamond.visible=true;
 
   if(keyDown("RIGHT_ARROW")){
     robot.x=robot.x+10;
@@ -1149,28 +1159,21 @@ if(robot.isTouching(points2_4)  && points2_1.x===20000===false){
 
 
 if(robot.isTouching(blocktoblock)===true){
-  box12.velocityX=3;
   lazer1.remove();
   lazer3.remove();
   lazer2.remove();
   lazer4.remove();
-  if(box12.isTouching(block66)){
-    box12.setVelocity(0,0);
-  }
+  box12.x=width/1.4;
 }else if(box12.isTouching(block66) && robot.isTouching(blocktoblock)===false){
-  box12.velocityX=-3;
+  box12.x=width/1.88;
+}
 
-}else if(box12.isTouching(block67))
-box12.setVelocity(0,0);
-
-
-if(robot.bounce(diamond)){
+if(robot.isTouching(diamond)){
   robot.x=2000;
-  robot.y=200;
-  diamond.x=2000;
-  diamond.y=2000;
-  this.input=createInput();
-  this.input.position(width/2.14,height/2.2);
+  robot.setVelocity(0,0);
+  diamond.x=25000;
+  diamond.setVelocity(0,0);
+  this.input.show();
   this.button3.show();
 }
 
@@ -1198,55 +1201,55 @@ this.button3.mousePressed(()=>{
 
 if(points2_1.x===20000===true && points2_2.x===29000===true && points2_3.x===59000===false && points2_4.x===89000===false){
 points_score=points_score+round(random(20*2,45*2));
-alert("The Extra Two Points Score are automatically credited to your total score & you have got extra 30 points for winning the diamond as well as the Game.");
+//alert("The Extra Two Points Score are automatically credited to your total score & you have got extra 30 points for winning the diamond as well as the Game.");
 }else if(points2_1.x===20000===true && points2_2.x===29000===true && points2_3.x===59000===true && points2_4.x===89000===false){
 points_score=points_score+round(random(20,45));
-alert("The Extra One Point Score are automatically credited to your total score & you have got extra 30 points for winning the diamond as well as the Game.");
+//alert("The Extra One Point Score are automatically credited to your total score & you have got extra 30 points for winning the diamond as well as the Game.");
 }else if(points2_1.x===20000===true && points2_2.x===29000===true && points2_3.x===59000===false && points2_4.x===89000===true){
 points_score=points_score+round(random(20,45));
-alert("The Extra One Point Score are automatically credited to your total score & you have got extra 30 points for winning the diamond as well as the Game.");
+//alert("The Extra One Point Score are automatically credited to your total score & you have got extra 30 points for winning the diamond as well as the Game.");
 }else if(points2_1.x===20000===true && points2_2.x===29000===false && points2_3.x===59000===true && points2_4.x===89000===true){
 points_score=points_score+round(random(20,45));
-alert("The Extra One Point Score are automatically credited to your total score & you have got extra 30 points for winning the diamond as well as the Game.");
+//alert("The Extra One Point Score are automatically credited to your total score & you have got extra 30 points for winning the diamond as well as the Game.");
 }else if(points2_1.x===20000===true && points2_2.x===29000===false && points2_3.x===59000===false && points2_4.x===89000===false){
 points_score=points_score+round(random(20*3,45*3));
-alert("The Extra Three Points Score are automatically credited to your total score & you have got extra 30 points for winning the diamond as well as the Game.");
+//alert("The Extra Three Points Score are automatically credited to your total score & you have got extra 30 points for winning the diamond as well as the Game.");
 }else if(points2_1.x===20000===false && points2_2.x===29000===true && points2_3.x===59000===false && points2_4.x===89000===false){
 points_score=points_score+round(random(20*3,45*3));
-alert("The Extra Three Points Score are automatically credited to your total score & you have got extra 30 points for winning the diamond as well as the Game.");
+//alert("The Extra Three Points Score are automatically credited to your total score & you have got extra 30 points for winning the diamond as well as the Game.");
 }else if(points2_1.x===20000===false && points2_2.x===29000===false && points2_3.x===59000===true && points2_4.x===89000===false){
 points_score=points_score+round(random(20*3,45*3));
-alert("The Extra Three Points Score are automatically credited to your total score & you have got extra 30 points for winning the diamond as well as the Game.");
+//alert("The Extra Three Points Score are automatically credited to your total score & you have got extra 30 points for winning the diamond as well as the Game.");
 }else if(points2_1.x===20000===false && points2_2.x===29000===false && points2_3.x===59000===false && points2_4.x===89000===true){
 points_score=points_score+round(random(20*3,45*3));
-alert("The Extra Three Points Score are automatically credited to your total score & you have got extra 30 points for winning the diamond as well as the Game.");
+//alert("The Extra Three Points Score are automatically credited to your total score & you have got extra 30 points for winning the diamond as well as the Game.");
 }else if(points2_1.x===20000===true && points2_2.x===29000===false && points2_3.x===59000===true && points2_4.x===89000===false){
 points_score=points_score+round(random(20*2,45*2));
-alert("The Extra Two Points Score are automatically credited to your total score & you have got extra 30 points for winning the diamond as well as the Game.");
+//alert("The Extra Two Points Score are automatically credited to your total score & you have got extra 30 points for winning the diamond as well as the Game.");
 }else if(points2_1.x===20000===true && points2_2.x===29000===false && points2_3.x===59000===false && points2_4.x===89000===true){
 points_score=points_score+round(random(20*2,45*2));
-alert("The Extra Two Points Score are automatically credited to your total score & you have got extra 30 points for winning the diamond as well as the Game.");
+//alert("The Extra Two Points Score are automatically credited to your total score & you have got extra 30 points for winning the diamond as well as the Game.");
 }else if(points2_2.x===29000===true && points2_1.x===20000===false && points2_3.x===59000===true && points2_4.x===89000===false){
 points_score=points_score+round(random(20*2,45*2));
-alert("The Extra Two Points Score are automatically credited to your total score & you have got extra 30 points for winning the diamond as well as the Game.");
+//alert("The Extra Two Points Score are automatically credited to your total score & you have got extra 30 points for winning the diamond as well as the Game.");
 }else if(points2_2.x===29000===true && points2_1.x===20000===false && points2_3.x===59000===false && points2_4.x===89000===true){
 points_score=points_score+round(random(20*2,45*2));
-alert("The Extra Two Points Score are automatically credited to your total score & you have got extra 30 points for winning the diamond as well as the Game.");
+//alert("The Extra Two Points Score are automatically credited to your total score & you have got extra 30 points for winning the diamond as well as the Game.");
 }else if(points2_3.x===59000===true && points2_1.x===20000===true && points2_2.x===29000===false && points2_4.x===89000===false){
 points_score=points_score+round(random(20*2,45*2));
-alert("The Extra Two Points Score are automatically credited to your total score & you have got extra 30 points for winning the diamond as well as the Game.");
+//alert("The Extra Two Points Score are automatically credited to your total score & you have got extra 30 points for winning the diamond as well as the Game.");
 }else if(points2_3.x===59000===true && points2_1.x===20000===false && points2_2.x===29000===true && points2_4.x===89000===false){
 points_score=points_score+round(random(20*2,45*2));
-alert("The Extra Two Points Score are automatically credited to your total score & you have got extra 30 points for winning the diamond as well as the Game.");
+//alert("The Extra Two Points Score are automatically credited to your total score & you have got extra 30 points for winning the diamond as well as the Game.");
 }else if(points2_4.x===89000===true && points2_1.x===20000===true && points2_3.x===59000===false && points2_2.x===29000===false){
 points_score=points_score+round(random(20*2,45*2));
-alert("The Extra Two Points Score are automatically credited to your total score & you have got extra 30 points for winning the diamond as well as the Game.");
+//alert("The Extra Two Points Score are automatically credited to your total score & you have got extra 30 points for winning the diamond as well as the Game.");
 }else if(points2_4.x===89000===true && points2_1.x===20000===false && points2_3.x===59000===false && points2_2.x===29000===true){
 points_score=points_score+round(random(20*2,45*2));
-alert("The Extra Two Points Score are automatically credited to your total score & you have got extra 30 points for winning the diamond as well as the Game.");
+//alert("The Extra Two Points Score are automatically credited to your total score & you have got extra 30 points for winning the diamond as well as the Game.");
 }else if(points2_4.x===89000===false && points2_1.x===20000===false && points2_3.x===59000===false && points2_2.x===29000===false){
 points_score=points_score+round(random(20*4,45*4));
-alert("The Extra Four Points Score are automatically credited to your total score & you have got extra 30 points for winning the diamond as well as the Game.");
+//alert("The Extra Four Points Score are automatically credited to your total score & you have got extra 30 points for winning the diamond as well as the Game.");
 }
    
   /* if(points_score=points_score+round(random(20*2,45*2)))
@@ -1262,288 +1265,282 @@ alert("The Extra Four Points Score are automatically credited to your total scor
    points_score+=30;
    gameState=4;
 
-   if(usertaking!==undefined && points_score!==null ){
+   if(usertaking!==undefined && points_score!==null){
     window.speechSynthesis.onvoiceschanged = function() {
       var voices = window.speechSynthesis.getVoices()
-      var utterance = new SpeechSynthesisUtterance('Congratulations ,'+usertaking.toLowerCase()+',, You have Won the Game with a score of ,,  '+points_score+', points'+'   ,,,  Share your score to your friends and invite them through ,, Whatsapp or Facebook to get a chance to Play the Game.');
+      var utterance = new SpeechSynthesisUtterance('Congratulations ,,,,'+usertaking.toLowerCase()+',, You have Won the Game with a score of ,,  '+points_score+', points'+'   ,,,  Share your performance to your friends and invite them through ,, Whatsapp or Facebook to get a chance to Play the Game.');
       utterance.voice = voices[3];
       utterance.lang = voices[4].lang;
       utterance.volume=0.7;
       window.speechSynthesis.speak(utterance);
     }
-  }else if(points_score!==undefined){ 
+   }else if(points_score!==undefined && usertaking==undefined || usertaking==null){
     window.speechSynthesis.onvoiceschanged = function() {
-      var voice = window.speechSynthesis.getVoices()
-      var utterance1 = new SpeechSynthesisUtterance('Congratulations , You have Won the Game with a score of ,,  '+points_score+', points'+'    ,,  Share your score to your friends and invite them through ,, Whatsapp or Facebook to get a chance to Play the Game.');
-      utterance1.voice = voice[8];
-      utterance1.lang = voice[4].lang;
-      utterance1.volume=0.7;
-      window.speechSynthesis.speak(utterance1);
-    }    
-}
-/*else if(security.authentication(capital,this.input.value()) && points_score==undefined && points_score==null){
       var voices2 = window.speechSynthesis.getVoices()
-      var utterance2 = new SpeechSynthesisUtterance('Congratulations , You Have Won the Game ,,,  Share your performance to your friends and invite them through ,, Whatsapp or Facebook to get a chance to Play the Game.');
-      utterance2.voice = voices2[8];
+      var utterance2 = new SpeechSynthesisUtterance('Congratulations ,,, You have Won the Game with a score of ,,  '+points_score+', points'+'  ,,,  Share your performance to your friends and invite them through ,, Whatsapp or Facebook to get a chance to Play the Game.');
+      utterance2.voice = voices2[3];
       utterance2.lang = voices2[4].lang;
-}*/
+      utterance2.volume=0.7;
+      window.speechSynthesis.speak(utterance2);
+    }
+}
     if(gameState===4){
      
-        'use strict';
+      'use strict';
 
-        var onlyOnKonami = false;
+      var onlyOnKonami = false;
+      
+      $(function() {
+        // Globals
+        var $window = $(window)
+          , random = Math.random
+          , cos = Math.cos
+          , sin = Math.sin
+          , PI = Math.PI
+          , PI2 = PI * 2
+          , timer = undefined
+          , frame = undefined
+          , confetti = [];
         
-        $(function() {
-          // Globals
-          var $window = $(window)
-            , random = Math.random
-            , cos = Math.cos
-            , sin = Math.sin
-            , PI = Math.PI
-            , PI2 = PI * 2
-            , timer = undefined
-            , frame = undefined
-            , confetti = [];
-          
-          var runFor = 20000
-          var isRunning = true
-          
-          setTimeout(() => {
-              isRunning = false
-          }, runFor);
+        var runFor = 20000
+        var isRunning = true
         
-          // Settings
-          var konami = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65]
-            , pointer = 0;
-        
-          var particles = 150
-            , spread = 20
-            , sizeMin = 5
-            , sizeMax = 12 - sizeMin
-            , eccentricity = 10
-            , deviation = 100
-            , dxThetaMin = -.1
-            , dxThetaMax = -dxThetaMin - dxThetaMin
-            , dyMin = .13
-            , dyMax = .18
-            , dThetaMin = .4
-            , dThetaMax = .7 - dThetaMin;
-        
-          var colorThemes = [
-            function() {
-              return color(200 * random()|0, 200 * random()|0, 200 * random()|0);
-            }, function() {
-              var black = 200 * random()|0; return color(200, black, black);
-            }, function() {
-              var black = 200 * random()|0; return color(black, 200, black);
-            }, function() {
-              var black = 200 * random()|0; return color(black, black, 200);
-            }, function() {
-              return color(200, 100, 200 * random()|0);
-            }, function() {
-              return color(200 * random()|0, 200, 200);
-            }, function() {
-              var black = 256 * random()|0; return color(black, black, black);
-            }, function() {
-              return colorThemes[random() < .5 ? 1 : 2]();
-            }, function() {
-              return colorThemes[random() < .5 ? 3 : 5]();
-            }, function() {
-              return colorThemes[random() < .5 ? 2 : 4]();
-            }
-          ];
-          function color(r, g, b) {
-            return 'rgb(' + r + ',' + g + ',' + b + ')';
+        setTimeout(() => {
+            isRunning = false
+        }, runFor);
+      
+        // Settings
+        var konami = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65]
+          , pointer = 0;
+      
+        var particles = 150
+          , spread = 20
+          , sizeMin = 5
+          , sizeMax = 12 - sizeMin
+          , eccentricity = 10
+          , deviation = 100
+          , dxThetaMin = -.1
+          , dxThetaMax = -dxThetaMin - dxThetaMin
+          , dyMin = .13
+          , dyMax = .18
+          , dThetaMin = .4
+          , dThetaMax = .7 - dThetaMin;
+      
+        var colorThemes = [
+          function() {
+            return color(200 * random()|0, 200 * random()|0, 200 * random()|0);
+          }, function() {
+            var black = 200 * random()|0; return color(200, black, black);
+          }, function() {
+            var black = 200 * random()|0; return color(black, 200, black);
+          }, function() {
+            var black = 200 * random()|0; return color(black, black, 200);
+          }, function() {
+            return color(200, 100, 200 * random()|0);
+          }, function() {
+            return color(200 * random()|0, 200, 200);
+          }, function() {
+            var black = 256 * random()|0; return color(black, black, black);
+          }, function() {
+            return colorThemes[random() < .5 ? 1 : 2]();
+          }, function() {
+            return colorThemes[random() < .5 ? 3 : 5]();
+          }, function() {
+            return colorThemes[random() < .5 ? 2 : 4]();
           }
-        
-          // Cosine interpolation
-          function interpolation(a, b, t) {
-            return (1-cos(PI*t))/2 * (b-a) + a;
-          }
-        
-          // Create a 1D Maximal Poisson Disc over [0, 1]
-          var radius = 1/eccentricity, radius2 = radius+radius;
-          function createPoisson() {
-            // domain is the set of points which are still available to pick from
-            // D = union{ [d_i, d_i+1] | i is even }
-            var domain = [radius, 1-radius], measure = 1-radius2, spline = [0, 1];
-            while (measure) {
-              var dart = measure * random(), i, l, interval, a, b, c, d;
-        
-              // Find where dart lies
-              for (i = 0, l = domain.length, measure = 0; i < l; i += 2) {
-                a = domain[i], b = domain[i+1], interval = b-a;
-                if (dart < measure+interval) {
-                  spline.push(dart += a-measure);
-                  break;
-                }
-                measure += interval;
+        ];
+        function color(r, g, b) {
+          return 'rgb(' + r + ',' + g + ',' + b + ')';
+        }
+      
+        // Cosine interpolation
+        function interpolation(a, b, t) {
+          return (1-cos(PI*t))/2 * (b-a) + a;
+        }
+      
+        // Create a 1D Maximal Poisson Disc over [0, 1]
+        var radius = 1/eccentricity, radius2 = radius+radius;
+        function createPoisson() {
+          // domain is the set of points which are still available to pick from
+          // D = union{ [d_i, d_i+1] | i is even }
+          var domain = [radius, 1-radius], measure = 1-radius2, spline = [0, 1];
+          while (measure) {
+            var dart = measure * random(), i, l, interval, a, b, c, d;
+      
+            // Find where dart lies
+            for (i = 0, l = domain.length, measure = 0; i < l; i += 2) {
+              a = domain[i], b = domain[i+1], interval = b-a;
+              if (dart < measure+interval) {
+                spline.push(dart += a-measure);
+                break;
               }
-              c = dart-radius, d = dart+radius;
-        
-              // Update the domain
-              for (i = domain.length-1; i > 0; i -= 2) {
-                l = i-1, a = domain[l], b = domain[i];
-                // c---d          c---d  Do nothing
-                //   c-----d  c-----d    Move interior
-                //   c--------------d    Delete interval
-                //         c--d          Split interval
-                //       a------b
-                if (a >= c && a < d)
-                  if (b > d) domain[l] = d; // Move interior (Left case)
-                  else domain.splice(l, 2); // Delete interval
-                else if (a < c && b > c)
-                  if (b <= d) domain[i] = c; // Move interior (Right case)
-                  else domain.splice(i, 0, c, d); // Split interval
-              }
-        
-              // Re-measure the domain
-              for (i = 0, l = domain.length, measure = 0; i < l; i += 2)
-                measure += domain[i+1]-domain[i];
+              measure += interval;
             }
-        
-            return spline.sort();
+            c = dart-radius, d = dart+radius;
+      
+            // Update the domain
+            for (i = domain.length-1; i > 0; i -= 2) {
+              l = i-1, a = domain[l], b = domain[i];
+              // c---d          c---d  Do nothing
+              //   c-----d  c-----d    Move interior
+              //   c--------------d    Delete interval
+              //         c--d          Split interval
+              //       a------b
+              if (a >= c && a < d)
+                if (b > d) domain[l] = d; // Move interior (Left case)
+                else domain.splice(l, 2); // Delete interval
+              else if (a < c && b > c)
+                if (b <= d) domain[i] = c; // Move interior (Right case)
+                else domain.splice(i, 0, c, d); // Split interval
+            }
+      
+            // Re-measure the domain
+            for (i = 0, l = domain.length, measure = 0; i < l; i += 2)
+              measure += domain[i+1]-domain[i];
           }
-        
-          // Create the overarching container
-          var container = document.createElement('div');
-          container.style.position = 'fixed';
-          container.style.top      = '0';
-          container.style.left     = '0';
-          container.style.width    = '100%';
-          container.style.height   = '0';
-          container.style.overflow = 'visible';
-          container.style.zIndex   = '9999';
-        
-          // Confetto constructor
-          function Confetto(theme) {
-            this.frame = 0;
-            this.outer = document.createElement('div');
-            this.inner = document.createElement('div');
-            this.outer.appendChild(this.inner);
-        
-            var outerStyle = this.outer.style, innerStyle = this.inner.style;
-            outerStyle.position = 'absolute';
-            outerStyle.width  = (sizeMin + sizeMax * random()) + 'px';
-            outerStyle.height = (sizeMin + sizeMax * random()) + 'px';
-            innerStyle.width  = '100%';
-            innerStyle.height = '100%';
-            innerStyle.backgroundColor = theme();
-        
-            outerStyle.perspective = '50px';
-            outerStyle.transform = 'rotate(' + (360 * random()) + 'deg)';
-            this.axis = 'rotate3D(' +
-              cos(360 * random()) + ',' +
-              cos(360 * random()) + ',0,';
-            this.theta = 360 * random();
-            this.dTheta = dThetaMin + dThetaMax * random();
+      
+          return spline.sort();
+        }
+      
+        // Create the overarching container
+        var container = document.createElement('div');
+        container.style.position = 'fixed';
+        container.style.top      = '0';
+        container.style.left     = '0';
+        container.style.width    = '100%';
+        container.style.height   = '0';
+        container.style.overflow = 'visible';
+        container.style.zIndex   = '9999';
+      
+        // Confetto constructor
+        function Confetto(theme) {
+          this.frame = 0;
+          this.outer = document.createElement('div');
+          this.inner = document.createElement('div');
+          this.outer.appendChild(this.inner);
+      
+          var outerStyle = this.outer.style, innerStyle = this.inner.style;
+          outerStyle.position = 'absolute';
+          outerStyle.width  = (sizeMin + sizeMax * random()) + 'px';
+          outerStyle.height = (sizeMin + sizeMax * random()) + 'px';
+          innerStyle.width  = '100%';
+          innerStyle.height = '100%';
+          innerStyle.backgroundColor = theme();
+      
+          outerStyle.perspective = '50px';
+          outerStyle.transform = 'rotate(' + (360 * random()) + 'deg)';
+          this.axis = 'rotate3D(' +
+            cos(360 * random()) + ',' +
+            cos(360 * random()) + ',0,';
+          this.theta = 360 * random();
+          this.dTheta = dThetaMin + dThetaMax * random();
+          innerStyle.transform = this.axis + this.theta + 'deg)';
+      
+          this.x = $window.width() * random();
+          this.y = -deviation;
+          this.dx = sin(dxThetaMin + dxThetaMax * random());
+          this.dy = dyMin + dyMax * random();
+          outerStyle.left = this.x + 'px';
+          outerStyle.top  = this.y + 'px';
+      
+          // Create the periodic spline
+          this.splineX = createPoisson();
+          this.splineY = [];
+          for (var i = 1, l = this.splineX.length-1; i < l; ++i)
+            this.splineY[i] = deviation * random();
+          this.splineY[0] = this.splineY[l] = deviation * random();
+      
+          this.update = function(height, delta) {
+            this.frame += delta;
+            this.x += this.dx * delta;
+            this.y += this.dy * delta;
+            this.theta += this.dTheta * delta;
+      
+            // Compute spline and convert to polar
+            var phi = this.frame % 7777 / 7777, i = 0, j = 1;
+            while (phi >= this.splineX[j]) i = j++;
+            var rho = interpolation(
+              this.splineY[i],
+              this.splineY[j],
+              (phi-this.splineX[i]) / (this.splineX[j]-this.splineX[i])
+            );
+            phi *= PI2;
+      
+            outerStyle.left = this.x + rho * cos(phi) + 'px';
+            outerStyle.top  = this.y + rho * sin(phi) + 'px';
             innerStyle.transform = this.axis + this.theta + 'deg)';
-        
-            this.x = $window.width() * random();
-            this.y = -deviation;
-            this.dx = sin(dxThetaMin + dxThetaMax * random());
-            this.dy = dyMin + dyMax * random();
-            outerStyle.left = this.x + 'px';
-            outerStyle.top  = this.y + 'px';
-        
-            // Create the periodic spline
-            this.splineX = createPoisson();
-            this.splineY = [];
-            for (var i = 1, l = this.splineX.length-1; i < l; ++i)
-              this.splineY[i] = deviation * random();
-            this.splineY[0] = this.splineY[l] = deviation * random();
-        
-            this.update = function(height, delta) {
-              this.frame += delta;
-              this.x += this.dx * delta;
-              this.y += this.dy * delta;
-              this.theta += this.dTheta * delta;
-        
-              // Compute spline and convert to polar
-              var phi = this.frame % 7777 / 7777, i = 0, j = 1;
-              while (phi >= this.splineX[j]) i = j++;
-              var rho = interpolation(
-                this.splineY[i],
-                this.splineY[j],
-                (phi-this.splineX[i]) / (this.splineX[j]-this.splineX[i])
-              );
-              phi *= PI2;
-        
-              outerStyle.left = this.x + rho * cos(phi) + 'px';
-              outerStyle.top  = this.y + rho * sin(phi) + 'px';
-              innerStyle.transform = this.axis + this.theta + 'deg)';
-              return this.y > height+deviation;
-            };
-          }
+            return this.y > height+deviation;
+          };
+        }
+          
+          
+        function poof() {
+          if (!frame) {
+            // Append the container
+            document.body.appendChild(container);
+      
+            // Add confetti
             
-            
-          function poof() {
-            if (!frame) {
-              // Append the container
-              document.body.appendChild(container);
-        
-              // Add confetti
+            var theme = colorThemes[onlyOnKonami ? colorThemes.length * random()|0 : 0]
+              , count = 0;
               
-              var theme = colorThemes[onlyOnKonami ? colorThemes.length * random()|0 : 0]
-                , count = 0;
-                
-              (function addConfetto() {
-          
-                if (onlyOnKonami && ++count > particles)
-                  return timer = undefined;
-                
-                if (isRunning) {
-                  var confetto = new Confetto(theme);
-                  confetti.push(confetto);
+            (function addConfetto() {
         
-                  container.appendChild(confetto.outer);
-                  timer = setTimeout(addConfetto, spread * random());
-                }else{
-                  
+              if (onlyOnKonami && ++count > particles)
+                return timer = undefined;
+              
+              if (isRunning) {
+                var confetto = new Confetto(theme);
+                confetti.push(confetto);
+      
+                container.appendChild(confetto.outer);
+                timer = setTimeout(addConfetto, spread * random());
+              }else{
+                
+              }
+            })(0);
+              
+      
+            // Start the loop
+            var prev = undefined;
+            requestAnimationFrame(function loop(timestamp) {
+              var delta = prev ? timestamp - prev : 0;
+              prev = timestamp;
+              var height = $window.height();
+      
+              for (var i = confetti.length-1; i >= 0; --i) {
+                if (confetti[i].update(height, delta)) {
+                  container.removeChild(confetti[i].outer);
+                  confetti.splice(i, 1);
                 }
-              })(0);
-                
-        
-              // Start the loop
-              var prev = undefined;
-              requestAnimationFrame(function loop(timestamp) {
-                var delta = prev ? timestamp - prev : 0;
-                prev = timestamp;
-                var height = $window.height();
-        
-                for (var i = confetti.length-1; i >= 0; --i) {
-                  if (confetti[i].update(height, delta)) {
-                    container.removeChild(confetti[i].outer);
-                    confetti.splice(i, 1);
-                  }
-                }
-        
-                if (timer || confetti.length)
-                  return frame = requestAnimationFrame(loop);
-        
-                // Cleanup
-                document.body.removeChild(container);
-                frame = undefined;
-              });
-            }
+              }
+      
+              if (timer || confetti.length)
+                return frame = requestAnimationFrame(loop);
+      
+              // Cleanup
+              document.body.removeChild(container);
+              frame = undefined;
+            });
           }
-            
-          $window.keydown(function(event) {
-            pointer = konami[pointer] === event.which
-              ? pointer+1
-              : +(event.which === konami[0]);
-            if (pointer === konami.length) {
-              pointer = 0;
-              poof();
-            }
-          });
+        }
           
-          if (!onlyOnKonami) poof();
+        $window.keydown(function(event) {
+          pointer = konami[pointer] === event.which
+            ? pointer+1
+            : +(event.which === konami[0]);
+          if (pointer === konami.length) {
+            pointer = 0;
+            poof();
+          }
         });
         
-        
-        
-   }
+        if (!onlyOnKonami) poof();
+      });
+      
+      
+      
+ }
  score_sound.play();
  }else {
    if(afteruser!==capital && afteruser.indexOf(' ')===0){
@@ -1559,10 +1556,10 @@ alert("The Extra Four Points Score are automatically credited to your total scor
 
 
 drawSprites();
-if(robot.x===2000 && diamond.x===2000){
+if(diamond.x===25000){
   fill("red");
   textSize(15)
-text("What is the Capital of USA",width/2.14,height/2.4);
+  text("What is the Capital of USA",width/2.14,height/2.4);
 }
 
 if(robot.isTouching(blocktoblock)===true){
@@ -1572,7 +1569,7 @@ if(robot.isTouching(blocktoblock)===true){
 }
 if(points2_1.x===20000 && points2_2.x===29000){
 
-}else if(points2_3.x===59000 && points2_4.x===89000){
+}else if(points2_3.x===59000 && points2_4.x===89000 && points2_1.x===20000===false && points2_2.x===29000===false ){
   //3rd Coin
   textSize(20);
   textFont("Times New Roman");
@@ -1583,6 +1580,9 @@ if(points2_1.x===20000 && points2_2.x===29000){
   textFont("Times New Roman");
   fill(255);
   text("Not Available!",width/14,height/7);
+
+  robot.bounceOff(points2_1);
+  robot.bounceOff(points2_2);
 }
 
 //1
@@ -1787,7 +1787,7 @@ playOver(){
     fill("green");
     text("Try Again to Become Champion in this Game",width/3.2,height/1.6);
     if(usertaking!==undefined && points_score!==null ){
-      window.speechSynthesis.onvoiceschanged = function() {
+        window.speechSynthesis.onvoiceschanged = function() {
         var voices5 = window.speechSynthesis.getVoices()
         var utterance8 = new SpeechSynthesisUtterance('So Sorry!! ,'+usertaking.toLowerCase()+',, You have lost the Game with a score of ,,  '+points_score+', points'+'   ,,,  Share your score to your friends and invite them through ,, Whatsapp or Facebook to get a chance to Play the Game.');
         utterance8.voice = voices5[3];
