@@ -7,7 +7,6 @@ class Game{
       this.button.style("color","white");
       this.button.style("border","none");
       this.button.style("border-radius","10px");
-      this.button.style("width","100px");
       this.button.style("height","30px");
 
       this.button3=createButton("SUBMIT");;
