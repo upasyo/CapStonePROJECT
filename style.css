@@ -3,6 +3,35 @@ html, body {
 	padding: 0;
 	
   }
+  html{
+    scroll-behavior: smooth ;
+  }
+  
+  /* width */
+  
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 55px;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #808080; 
+    border-radius: 20px;
+    transition:0.8s;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background:#979696;
+    transition:0.8s;
+  }
+  
   canvas{
     border:5px dotted orangered;
   }
