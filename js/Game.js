@@ -8,21 +8,19 @@ class Game{
       this.button.style("border","none");
       this.button.style("border-radius","10px");
       this.button.style("height","30px");
+      this.button.hide();
 
-      this.button3=createButton("SUBMIT");;
-      this.button3.position(width/2.05,height/1.9);
+
+      this.button3=createButton("Answer my Question");;
+      this.button3.position(width/2.15,height/2);
       this.button3.style("outline","0");
       this.button3.style("background-color","blue");
       this.button3.style("color","white");
       this.button3.style("border","none");
       this.button3.style("border-radius","10px");
-      this.button3.style("width","100px");
-      this.button3.style("height","30px");
+      this.button3.style("width","170px");
+      this.button3.style("height","40px");
       this.button3.hide();
-
-      this.input=createInput();
-      this.input.position(width/2.14,height/2.2);
-      this.input.hide();
     }
     start(){
       restart=createSprite(width/1.9,height/1.4);
@@ -85,7 +83,7 @@ class Game{
 
          box10=createSprite(width/2.82,height/4,10,120);
          box11=createSprite(width/1.48,height/4,10,120);
-         box12=createSprite(width/1.88,height/1.8,200,10)
+         box12=createSprite(width/1.88,height/1.8,195,10)
          box4.visible=false;
          box5.visible=false;
          box9.visible=false;
@@ -219,6 +217,8 @@ class Game{
          suma=round(random(5000,12000));
          sumb=round(random(8000,16000));
          accessCode=suma+sumb;
+
+         Code='WASHINGTONDC'
     }
 
 starting(){
@@ -283,9 +283,12 @@ robot.collide(edges);
  ball6.bounceOff(edges);
  diamond.visible=false;
 
- if(keyCode===32)
-    gameState=1;
-  
+ if(keyCode===32){
+   gameState=1;
+   gameSound.play();
+   gameSound.setVolume(0.12);
+   gameSound.loop();
+ }
   drawSprites();
   fill(color("red"));
   textSize(25);
@@ -343,6 +346,7 @@ diamond.visible=false;
   if(robot.x>width/1.2){
     gameState=2;
     robot.x=width/3;
+    
   }
   /*lazer1.visible=false;
   lazer2.visible=false;*/
@@ -390,7 +394,7 @@ played(){
     health_score+=5;
     points1_1.x=3000;
     score_sound.play();
-
+    //localStorage.setItem("health_score","220");
   }
   if(robot.isTouching(points1_2)){
     points_score+=50;
@@ -402,11 +406,11 @@ played(){
     points1_2.x=90000;
   }
 if(robot.y<height/4.2 && robot.isTouching(door)===false){
- gameState=6;
- robot.scale=0.25;
- points1_1.x=99000;
+   gameState=6;
+//robot.x=width/2.3;
  //points1_2.x=99000;
  }
+
  /*if(points1_1.x==99000 && points1_2.x==90000){
    health_score+=10;
    points_score+=100;
@@ -498,16 +502,55 @@ if(robot.y<height/4.2 && robot.isTouching(door)===false){
 }
 
 playafter(){
+/*  if(robot.isTouching(door)===false){
+    robot.x=width/2.3;
+    robot.y=height/9;
+  }*/
   edges=createEdgeSprites();
   robot.bounceOff(edges);
 //Blank for text 1
 //console.log(robot.scale);
+robot.scale=0.25;
+
+points1_1.x=99000;
+//points1_2.x=2000;
+
+if(robot.y>height/2.2){
+  robot.y=height/1.1;
+  robot.x=width/5;
+}
+if( points1_2.x===2000 && points1_1.x===99000 && door.scale==1.3===false )
+{
+  points1_2.x=50000;
+  points1_1.x=55555;
+  points_score+=50;
+  health_score+=5;
+  score_sound.play();
+
+  
+}else if(points1_2.x===90000 && points1_1.x===99000 && door.scale==1.3===false )
+{
+  points_score+=100;
+  health_score+=10;
+  points1_2.x=50000;
+  points1_1.x=55555;
+  score_sound.play();
+}
+if(keyDown("RIGHT_ARROW")){
+  robot.x=robot.x+10;
+  }else if(keyDown("LEFT_ARROW")){
+  robot.x=robot.x-10;
+  }else if(keyDown("UP_ARROW")){
+  robot.y=robot.y-10;
+  }else if(keyDown("DOWN_ARROW")){
+  robot.y=robot.y+10;
+  }
 robot.bounceOff(ground3);
 robot.bounceOff(ground4);
 robot.bounceOff(ground5);
 robot.bounceOff(ground6);
 robot.bounceOff(ground7);
-if(robot.y<=height/2){
+if(door.scale==1.3===false){
   fill(color("magenta"))
   textSize(18);
   text("Touch the Door",width/1.6,height/6);
@@ -520,30 +563,15 @@ if(door.x===width/2 && door.y===height/2){
   points1_2.visible=true;
 }
 console.log(points1_1.x)
-if( points1_2.x===2000 && points1_1.x===99000 && door.scale==1.3===false )
-{
-  points_score+=50;
-  health_score+=5;
-  score_sound.play();
-  points1_2.x=50000;
-  points1_1.x=55555;
-  
-}else if(points1_2.x===90000 && points1_1.x===99000 && door.scale==1.3===false )
-{
-  points_score+=100;
-  health_score+=10;
-  points1_2.x=50000;
-  points1_1.x=55555;
-  score_sound.play();
-}
-if(  points1_2.x===50000 &&points1_1.x===55555 && door.scale==1.3===false )
+
+if(  door.scale==1.3===false )
 {
   textSize(22);
   fill("red");
   text("All Points are Automatically Collected as you Crossed the Balls",width/3.5,height/2.2);
   
 }
-
+console.log(robot.x);
 if(robot.isTouching(door)){
   /*this.input=createInput();
   this.input.position(width/2.5,height/1.2);
@@ -574,7 +602,7 @@ points1_2.remove();
   door.y=height/2;
   
 
-  robot.x=width/9;
+  robot.x=width/6;
   robot.y=height/1.1;
   door.scale=+1.3;
 
@@ -600,19 +628,13 @@ this.button.mousePressed(() =>{
     score_sound.play();
 
 
+  
 
     if(points_score+=50 === true && usertaking!==null && usertaking!==undefined)
       alert(usertaking.toUpperCase()+" You Have Got Extra 50 points");
       else
       alert("You Have Got Extra 50 points");
   
-
-    
-
-
-
-
-
   }else{
     if(user.indexOf(' ')>0){
       alert("Please Answer the Question Without Giving any space or gap.")
@@ -658,21 +680,47 @@ if(accessCode===parseInt(user)){
 
 
 
-if(keyDown("RIGHT_ARROW")){
-  robot.x=robot.x+10;
-  }else if(keyDown("LEFT_ARROW")){
-  robot.x=robot.x-10;
-  }else if(keyDown("UP_ARROW")){
-  robot.y=robot.y-10;
-  }else if(keyDown("DOWN_ARROW")){
-  robot.y=robot.y+10;
-  }/*Alternate Code*/
+/*Alternate Code*/
   ball1.remove();
   ball3.remove();
   ball4.remove();
   ball5.remove();
   ball6.remove();
+points1_1.remove();
+points1_2.remove();
+points2_1.visible=false;
+points2_2.visible=false;
+points2_3.visible=false;
+points2_4.visible=false;
+lazer1.visible=false;
+lazer2.visible=false;
+lazer3.visible=false;
+lazer4.visible=false;
+babytoy1.visible=false;
+babytoy2.visible=false;
+babytoy3.visible=false;
+babytoy4.visible=false;
+babytoy5.visible=false;
+babytoy6.visible=false;
+babytoy7.visible=false;
+babytoy8.visible=false;
+box12.visible=false;
+box8.visible=false;
+box4.visible=false;
+box5.visible=false;
+box11.visible=false;
+box3.visible=false;
+box6.visible=false;
+box7.visible=false;
 
+diamond.visible=false;
+
+ground1.visible=false;
+ground2.visible=false;
+ground3.visible=false;
+ground4.visible=false;
+
+restart.visible=false;
 drawSprites();
 
 if(accessCode===parseInt(user)){
@@ -734,7 +782,7 @@ robot.bounce(box6);
 robot.bounce(box7);
 robot.bounce(box11);
 robot.bounce(box8);
-robot.bounce(box12);
+//robot.bounce(box12);
 robot.bounce(box3);
 robot.bounce(box5);
 robot.bounce(toysGroup);
@@ -1155,16 +1203,16 @@ if(robot.isTouching(points2_4)  && points2_1.x===20000===false){
 //robot.x=width/1.95;
 //robot.y=height/1.5;
 
-
-
 if(robot.isTouching(blocktoblock)===true){
   lazer1.remove();
   lazer3.remove();
   lazer2.remove();
   lazer4.remove();
-  box12.x=width/1.4;
+  box12.visible=false;
+  //box12.y=height/2;
+  //robot.bounce(box12)=false;
 }else if(box12.isTouching(block66) && robot.isTouching(blocktoblock)===false){
-  box12.x=width/1.88;
+  box12.visible=true;
 }
 
 if(robot.isTouching(diamond)){
@@ -1172,10 +1220,12 @@ if(robot.isTouching(diamond)){
   robot.setVelocity(0,0);
   diamond.x=25000;
   diamond.setVelocity(0,0);
-  this.input.show();
+}
+if(diamond.x===25000){
   this.button3.show();
 }
-
+this.button3.mousePressed(()=>{
+  afteruser=prompt("What is the Capital of USA ?");
 /*if(){
   box12.x=width/1.5;
   lazer1.remove();
@@ -1186,10 +1236,11 @@ if(robot.isTouching(diamond)){
   diamond.remove();
 }*/
 
-this.button3.mousePressed(()=>{
 
-  if(security.authentication(capital,this.input.value()))
- {
+gameSound.stop();
+
+
+if(security.authentication(capital,afteruser)){
    /*if(points2_1.x===26000){
      points_score+=150;
      points2_1.x=15000;
@@ -1283,281 +1334,204 @@ points_score=points_score+round(random(20*4,45*4));
       window.speechSynthesis.speak(utterance2);
     }
 }
-    if(gameState===4){
-     
-      'use strict';
 
-      var onlyOnKonami = false;
-      
-      $(function() {
-        // Globals
-        var $window = $(window)
-          , random = Math.random
-          , cos = Math.cos
-          , sin = Math.sin
-          , PI = Math.PI
-          , PI2 = PI * 2
-          , timer = undefined
-          , frame = undefined
-          , confetti = [];
-        
-        var runFor = 20000
-        var isRunning = true
-        
-        setTimeout(() => {
-            isRunning = false
-        }, runFor);
-      
-        // Settings
-        var konami = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65]
-          , pointer = 0;
-      
-        var particles = 150
-          , spread = 20
-          , sizeMin = 5
-          , sizeMax = 12 - sizeMin
-          , eccentricity = 10
-          , deviation = 100
-          , dxThetaMin = -.1
-          , dxThetaMax = -dxThetaMin - dxThetaMin
-          , dyMin = .13
-          , dyMax = .18
-          , dThetaMin = .4
-          , dThetaMax = .7 - dThetaMin;
-      
-        var colorThemes = [
-          function() {
-            return color(200 * random()|0, 200 * random()|0, 200 * random()|0);
-          }, function() {
-            var black = 200 * random()|0; return color(200, black, black);
-          }, function() {
-            var black = 200 * random()|0; return color(black, 200, black);
-          }, function() {
-            var black = 200 * random()|0; return color(black, black, 200);
-          }, function() {
-            return color(200, 100, 200 * random()|0);
-          }, function() {
-            return color(200 * random()|0, 200, 200);
-          }, function() {
-            var black = 256 * random()|0; return color(black, black, black);
-          }, function() {
-            return colorThemes[random() < .5 ? 1 : 2]();
-          }, function() {
-            return colorThemes[random() < .5 ? 3 : 5]();
-          }, function() {
-            return colorThemes[random() < .5 ? 2 : 4]();
-          }
-        ];
-        function color(r, g, b) {
-          return 'rgb(' + r + ',' + g + ',' + b + ')';
-        }
-      
-        // Cosine interpolation
-        function interpolation(a, b, t) {
-          return (1-cos(PI*t))/2 * (b-a) + a;
-        }
-      
-        // Create a 1D Maximal Poisson Disc over [0, 1]
-        var radius = 1/eccentricity, radius2 = radius+radius;
-        function createPoisson() {
-          // domain is the set of points which are still available to pick from
-          // D = union{ [d_i, d_i+1] | i is even }
-          var domain = [radius, 1-radius], measure = 1-radius2, spline = [0, 1];
-          while (measure) {
-            var dart = measure * random(), i, l, interval, a, b, c, d;
-      
-            // Find where dart lies
-            for (i = 0, l = domain.length, measure = 0; i < l; i += 2) {
-              a = domain[i], b = domain[i+1], interval = b-a;
-              if (dart < measure+interval) {
-                spline.push(dart += a-measure);
-                break;
-              }
-              measure += interval;
-            }
-            c = dart-radius, d = dart+radius;
-      
-            // Update the domain
-            for (i = domain.length-1; i > 0; i -= 2) {
-              l = i-1, a = domain[l], b = domain[i];
-              // c---d          c---d  Do nothing
-              //   c-----d  c-----d    Move interior
-              //   c--------------d    Delete interval
-              //         c--d          Split interval
-              //       a------b
-              if (a >= c && a < d)
-                if (b > d) domain[l] = d; // Move interior (Left case)
-                else domain.splice(l, 2); // Delete interval
-              else if (a < c && b > c)
-                if (b <= d) domain[i] = c; // Move interior (Right case)
-                else domain.splice(i, 0, c, d); // Split interval
-            }
-      
-            // Re-measure the domain
-            for (i = 0, l = domain.length, measure = 0; i < l; i += 2)
-              measure += domain[i+1]-domain[i];
-          }
-      
-          return spline.sort();
-        }
-      
-        // Create the overarching container
-        var container = document.createElement('div');
-        container.style.position = 'fixed';
-        container.style.top      = '0';
-        container.style.left     = '0';
-        container.style.width    = '100%';
-        container.style.height   = '0';
-        container.style.overflow = 'visible';
-        container.style.zIndex   = '9999';
-      
-        // Confetto constructor
-        function Confetto(theme) {
-          this.frame = 0;
-          this.outer = document.createElement('div');
-          this.inner = document.createElement('div');
-          this.outer.appendChild(this.inner);
-      
-          var outerStyle = this.outer.style, innerStyle = this.inner.style;
-          outerStyle.position = 'absolute';
-          outerStyle.width  = (sizeMin + sizeMax * random()) + 'px';
-          outerStyle.height = (sizeMin + sizeMax * random()) + 'px';
-          innerStyle.width  = '100%';
-          innerStyle.height = '100%';
-          innerStyle.backgroundColor = theme();
-      
-          outerStyle.perspective = '50px';
-          outerStyle.transform = 'rotate(' + (360 * random()) + 'deg)';
-          this.axis = 'rotate3D(' +
-            cos(360 * random()) + ',' +
-            cos(360 * random()) + ',0,';
-          this.theta = 360 * random();
-          this.dTheta = dThetaMin + dThetaMax * random();
-          innerStyle.transform = this.axis + this.theta + 'deg)';
-      
-          this.x = $window.width() * random();
-          this.y = -deviation;
-          this.dx = sin(dxThetaMin + dxThetaMax * random());
-          this.dy = dyMin + dyMax * random();
-          outerStyle.left = this.x + 'px';
-          outerStyle.top  = this.y + 'px';
-      
-          // Create the periodic spline
-          this.splineX = createPoisson();
-          this.splineY = [];
-          for (var i = 1, l = this.splineX.length-1; i < l; ++i)
-            this.splineY[i] = deviation * random();
-          this.splineY[0] = this.splineY[l] = deviation * random();
-      
-          this.update = function(height, delta) {
-            this.frame += delta;
-            this.x += this.dx * delta;
-            this.y += this.dy * delta;
-            this.theta += this.dTheta * delta;
-      
-            // Compute spline and convert to polar
-            var phi = this.frame % 7777 / 7777, i = 0, j = 1;
-            while (phi >= this.splineX[j]) i = j++;
-            var rho = interpolation(
-              this.splineY[i],
-              this.splineY[j],
-              (phi-this.splineX[i]) / (this.splineX[j]-this.splineX[i])
-            );
-            phi *= PI2;
-      
-            outerStyle.left = this.x + rho * cos(phi) + 'px';
-            outerStyle.top  = this.y + rho * sin(phi) + 'px';
-            innerStyle.transform = this.axis + this.theta + 'deg)';
-            return this.y > height+deviation;
-          };
-        }
-          
-          
-        function poof() {
-          if (!frame) {
-            // Append the container
-            document.body.appendChild(container);
-      
-            // Add confetti
-            
-            var theme = colorThemes[onlyOnKonami ? colorThemes.length * random()|0 : 0]
-              , count = 0;
-              
-            (function addConfetto() {
-        
-              if (onlyOnKonami && ++count > particles)
-                return timer = undefined;
-              
-              if (isRunning) {
-                var confetto = new Confetto(theme);
-                confetti.push(confetto);
-      
-                container.appendChild(confetto.outer);
-                timer = setTimeout(addConfetto, spread * random());
-              }else{
-                
-              }
-            })(0);
-              
-      
-            // Start the loop
-            var prev = undefined;
-            requestAnimationFrame(function loop(timestamp) {
-              var delta = prev ? timestamp - prev : 0;
-              prev = timestamp;
-              var height = $window.height();
-      
-              for (var i = confetti.length-1; i >= 0; --i) {
-                if (confetti[i].update(height, delta)) {
-                  container.removeChild(confetti[i].outer);
-                  confetti.splice(i, 1);
-                }
-              }
-      
-              if (timer || confetti.length)
-                return frame = requestAnimationFrame(loop);
-      
-              // Cleanup
-              document.body.removeChild(container);
-              frame = undefined;
-            });
-          }
-        }
-          
-        $window.keydown(function(event) {
-          pointer = konami[pointer] === event.which
-            ? pointer+1
-            : +(event.which === konami[0]);
-          if (pointer === konami.length) {
-            pointer = 0;
-            poof();
-          }
-        });
-        
-        if (!onlyOnKonami) poof();
-      });
-      
-      
-      
- }
  score_sound.play();
- }else {
-   if(afteruser!==capital && afteruser.indexOf(' ')===0){
-    alert("Wrong Answer . Just only one step left to Win the Game");
+ const btnConfetti = document.getElementById("confetti-btn");
 
- }else if(afteruser===undefined){
+let status = true;
+let particlesContainer;
+let particlesOptions;
+
+btnConfetti.addEventListener("click", function () {
+  toggleStatus(!status);
+});
+
+function toggleStatus(newStatus) {
+  status = newStatus;
+
+  if (status) {
+    tsParticles.load(particlesOptions).then((container) => {
+      particlesContainer = container;
+
+      document.querySelector(".fa-play").classList.add("hidden");
+      document.querySelector(".fa-pause").classList.remove("hidden");
+    });
+  } else {
+    if (particlesContainer) {
+      particlesContainer.destroy();
+      particlesContainer = undefined;
+
+      document.querySelector(".fa-play").classList.remove("hidden");
+      document.querySelector(".fa-pause").classList.add("hidden");
+    }
+  }
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  particlesOptions = {
+    fpsLimit: 60,
+    particles: {
+      number: {
+        value: 0
+      },
+      color: {
+        value: "#f00"
+      },
+      shape: {
+        type: ["circle", "square", "polygon"],
+        options: {
+          polygon: {
+            sides: 6
+          }
+        }
+      },
+      opacity: {
+        value: { min: 0, max: 1 },
+        animation: {
+          enable: true,
+          speed: 1,
+          startValue: "max",
+          destroy: "min"
+        }
+      },
+      size: {
+        value: { min: 3, max: 7 }
+      },
+      life: {
+        duration: {
+          sync: true,
+          value: 7
+        },
+        count: 1
+      },
+      move: {
+        enable: true,
+        gravity: {
+          enable: true
+        },
+        drift: {
+          min: -2,
+          max: 2
+        },
+        speed: { min: 10, max: 30 },
+        decay: 0.1,
+        direction: "none",
+        random: false,
+        straight: false,
+        outModes: {
+          default: "destroy",
+          top: "none"
+        }
+      },
+      rotate: {
+        value: {
+          min: 0,
+          max: 360
+        },
+        direction: "random",
+        move: true,
+        animation: {
+          enable: true,
+          speed: 60
+        }
+      },
+      tilt: {
+        direction: "random",
+        enable: true,
+        move: true,
+        value: {
+          min: 0,
+          max: 360
+        },
+        animation: {
+          enable: true,
+          speed: 60
+        }
+      },
+      roll: {
+        darken: {
+          enable: true,
+          value: 25
+        },
+        enable: true,
+        speed: {
+          min: 15,
+          max: 25
+        }
+      },
+      wobble: {
+        distance: 30,
+        enable: true,
+        move: true,
+        speed: {
+          min: -15,
+          max: 15
+        }
+      }
+    },
+    detectRetina: true,
+    emitters: {
+      direction: "none",
+      spawnColor: {
+        value: "#ff0000",
+        animation: {
+          h: {
+            enable: true,
+            offset: {
+              min: -1.4,
+              max: 1.4
+            },
+            speed: 0.1,
+            sync: false
+          },
+          l: {
+            enable: true,
+            offset: {
+              min: 20,
+              max: 80
+            },
+            speed: 0,
+            sync: false
+          }
+        }
+      },
+      life: {
+        count: 0,
+        duration: 0.1,
+        delay: 0.6
+      },
+      rate: {
+        delay: 0.1,
+        quantity: 100
+      },
+      size: {
+        width: 0,
+        height: 0
+      }
+    }
+  };
+
+  toggleStatus(status);
+});
+
+ }else{
+  if(afteruser.toUpperCase()!==capital && afteruser!==undefined && afteruser!==null){
+    alert("Wrong Answer . Just only one step left to Win the Game");
+ 
+ }/*else if(afteruser===undefined){
    alert("Answer your Question First to Get the Diamond Crown and Won the Game");
  }else if(afteruser===null){
   alert("Answer your Question First to Get the Diamond Crown and Won the Game. Do not Press the Cancel BUTTON");
-}
-}
-})
-
-
+ }*/
+ }
+});
+console.log(afteruser);
 drawSprites();
+
+
 if(diamond.x===25000){
   fill("red");
-  textSize(15)
+  textSize(15);
   text("What is the Capital of USA",width/2.14,height/2.4);
 }
 
@@ -1726,6 +1700,7 @@ if(points2_4.x===89000===true && points2_1.x===20000===false && points2_3.x===59
   robot.bounceOff(points2_1);
   robot.bounceOff(points2_3);
 }
+
 }
 playWon(){
 /*  if(usertaking !==undefined && usertaking!==null){
@@ -1734,7 +1709,6 @@ playWon(){
     alert("Congrats you Have won the Diamond .Your score is increased by 30");
 }*/
     this.button3.remove();
-    this.input.remove();
     this.button.remove();
    //this.button3.remove();
     restart.visible=false;
@@ -1753,6 +1727,7 @@ playWon(){
      
     }
   text("Your Score = "+points_score,width/4,height/2);
+
 }
 playWin(){
 
@@ -1770,8 +1745,172 @@ playWin(){
       document.getElementById("p1").innerHTML="Hi! I have won the Diamond as well as the Game with a score of "+points_score+". You Could also stand a chance to win the game. Click on the Link below to Play the Game:- https://bit.ly/DiamondCrownGame";
     }
     $("canvas").remove(); 
-    container.hide();
+   // container.hide();
     this.button.hide();
+
+    function confetti(containerid, count) {
+      var PREMIUM = true;
+      var container = document.getElementById(containerid || "container"),
+        containerRect = container.getBoundingClientRect(),
+        containerWidth = containerRect.width,
+        containerHeight = containerRect.height,
+        colors = PREMIUM ? ["a67c00", "bf9b30", "ffbf00", "ffcf40", "ffdc73"]
+          : ["DF4678", "00CECB", "995AE2", "FFC857", "CA3B4E"],
+        colorsLength = colors.length,
+        delta = 100,
+        frag = document.createDocumentFragment();
+    
+      count = count || 100;
+    
+      for (i = 0; i < count; i++) {
+        var div = document.createElement("div");
+        div.classList.add("paper");
+        div.style.backgroundImage =
+          "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='%23" +
+          colors[get_random_number(0, colorsLength - 1)] +
+          "' d='M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z'/%3E%3C/svg%3E\")";
+    
+        var size =
+          i > count * 0.95 ? get_random_number(65, 128) : get_random_number(16, 32);
+    
+        div.style.opacity = count / (i * 2) + 0.5;
+        div.style.width = size + "px";
+        div.style.height = size + "px";
+        div.style.zIndex = i + 100;
+    
+        if (i > count * 0.9) {
+          div.style.filter = "blur(" + Math.abs(i / 20) + "px)";
+          div.style.opacity = 0.4;
+        }
+    
+        // Animation motion path
+        var firstPathResult = generate_first_path();
+        var firstPath = path_to_bezier(firstPathResult.path);
+        var lastPath = path_to_bezier(generate_last_path(firstPathResult.endPoint));
+    
+        // Time for animation
+        let firstTime = get_random_number(500, 15000, 500) / 1000;
+    
+        // Caculate last time base on distance
+        let lastTime =
+          2 *
+            Math.min(Math.abs(firstPathResult.endPoint[1] / containerHeight), 0.8) +
+          get_random_number(-5, 5) / 10;
+        lastTime = Math.max(firstTime, lastTime);
+    
+        // Make animation
+        new TimelineMax()
+          .to(div, firstTime, {
+            bezier: { values: firstPath, type: "cubic" },
+            ease: Power1.easeOut,
+            rotationZ: "+=" + get_random_number(360, 1080)
+          })
+          .to(div, lastTime, {
+            bezier: { values: lastPath, type: "cubic" },
+            ease: Power1.easeIn,
+            rotationZ: "+=" + get_random_number(360, 1080),
+            onComplete: function() {
+              //          console.log(this);
+              this.target.remove();
+            }
+          });
+    
+        frag.appendChild(div);
+      }
+      container.appendChild(frag);
+    
+      function generate_first_path() {
+        //const startPoint = [get_random_number(-delta, 0), get_random_number(0, delta)];
+        const startPoint = [containerWidth / 2, containerHeight / 2];
+        const endPointY = get_random_number(-containerWidth * 4 / 5, 20);
+        let endPointX = containerWidth / 2;
+        if (Math.abs(endPointY) > containerHeight / 2) {
+          endPointX = get_random_number(containerWidth / 4, containerWidth * 3 / 4);
+        } else {
+          endPointX = get_random_number(0, containerWidth);
+        }
+        const endPoint = [endPointX, endPointY];
+        const controlPoint1 = [
+          get_random_number(startPoint[0] - delta / 2, startPoint[0]),
+          get_random_number(startPoint[1] + delta / 2, startPoint[1] + 2 * delta)
+        ];
+        const controlPoint2 = [
+          get_random_number(endPoint[0] - delta, endPoint[0]),
+          get_random_number(endPoint[1] + delta, endPoint[1] - delta)
+        ];
+        return {
+          path: `M ${startPoint.join(",")} C ${controlPoint1.join(",")} ${controlPoint2.join(",")} ${endPoint.join(",")}`,
+          endPoint: endPoint
+        };
+      }
+    
+      function generate_last_path(startPoint) {
+        let endPointX = 0;
+        if (Math.abs(startPoint[1]) > containerHeight / 2) {
+          endPointX = get_random_number(
+            startPoint[0] - delta,
+            startPoint[0] + delta
+          );
+        } else {
+          endPointX = get_random_number(
+            startPoint[0] - delta / 2,
+            startPoint[0] + delta / 2
+          );
+        }
+        const endPoint = [endPointX, get_random_number(0, delta)];
+        const controlPoint1 = [
+          get_random_number(startPoint[0] - delta, startPoint[0] + delta),
+          get_random_number(startPoint[1], startPoint[1] + delta)
+        ];
+        const controlPoint2 = [
+          get_random_number(endPoint[0] - delta, endPoint[0] + delta),
+          get_random_number(endPoint[1] + delta, endPoint[1])
+        ];
+        return `M ${startPoint.join(",")} C ${controlPoint1.join(",")} ${controlPoint2.join(",")} ${endPoint.join(",")}`;
+      }
+    
+      function get_random_number(start, end, step = 1) {
+        const numberOfVariants = Math.floor((end - start) / step + 1);
+        return Math.floor(Math.random() * numberOfVariants) * step + start;
+      }
+    }
+    
+    function path_to_bezier(path) {
+      //points exported from DrawScript : Bezier Points Array (anchor, control, control, anchor)
+      var data = Snap.path.toCubic(path);
+      (dataLength = data.length),
+        (points = []), //holds our series of x/y values for anchors and control points,
+        (pointsString = data.toString());
+    
+      // convert cubic data to GSAP bezier
+      for (var i = 0; i < dataLength; i++) {
+        var seg = data[i];
+        if (seg[0] === "M") {
+          // move (starts the path)
+          var point = {};
+          point.x = seg[1];
+          point.y = seg[2];
+          points.push(point);
+        } else {
+          // seg[0] === "C" (Snap.path.toCubic should return only curves after first point)
+          for (var j = 1; j < 6; j += 2) {
+            var point = {};
+            point.x = seg[j];
+            point.y = seg[j + 1];
+            points.push(point);
+          }
+        }
+      }
+    
+      return points;
+    
+    }
+    
+    
+    setTimeout(confetti(),5000)
+      
+    
+
 
 }, runFor);
 }
