@@ -26,9 +26,20 @@ var babytoy1,babytoy1_Img,babytoy2,babytoy2_Img,babytoy3,babytoy3_Img,babytoy4,b
 var lazerImg;
 var blocktoblock,block66,block67;
 var ballhit_sound, lazerhit_sound;
-var gameState =0;
+var Code;
+var state1,state2,state3,state4,state5,state6;
+var health1,health2,health3,health4,health5,health6,health7;
+var gameSound;
+//var state=localStorage.getItem("state");
+//localStorage.setItem("health_score","0");
+//localStorage.setItem("state","0");
+/*
+var healthy=localStorage.setItem("health_score",15);
+var pointsscore=localStorage.setItem("points_score",100);*/
+//console.log(state+"state")
+var gameState=0;
  function preload(){
-game_ambience=loadSound("sound/game_ambience.mp3");
+gameSound=loadSound("sound/synthwave-vintage-future-synth-80s-retro-game-futuristic-music-16535.mp3");
 score_sound=loadSound("sound/scoreincrease.mp3");
 ballhit_sound=loadSound("sound/ballhit.mp3");
 lazerhit_sound=loadSound("sound/lazersound.mp3");
@@ -89,9 +100,20 @@ door.setCollider("rectangle",5,5,380,395);
 //robot.debug=true;
 robot.setCollider("circle");
 
-//key_score=5;
-health_score=15;
+
+
+
+
+//key_score=5;//*
+/*
+localStorage.setItem("health_score","15");
+health_score=localStorage.getItem("health_score");
+
+localStorage.setItem("points_score","100");
+points_score=localStorage.getItem("points_score");*/
 points_score=100;
+health_score=15;
+
 ballsGroup = createGroup();
 //lazersGroup= createGroup();
 toysGroup =  createGroup();
@@ -104,11 +126,7 @@ game.start();
 
 security = new Security();
 
-
-
-
- 
-if(gameState===0){
+if(gameState==0){
   //usertaking=prompt("Enter Your Name");
   
   checkCookie();
@@ -395,10 +413,13 @@ alert("Write without giving any gap such as NEWDELHI")
 }
 
 function draw(){
-
+console.log(gameState);
 console.log(usertaking);
   background(255);
 
+  score_sound.setVolume(1);
+  ballhit_sound.setVolume(1);
+  lazerhit_sound.setVolume(1);
  
   if(points_score<=20 && health_score>0){
     points_score=100;
@@ -468,6 +489,7 @@ robot.y=robot.y-10;
 }else if(keyDown("DOWN_ARROW")){
 robot.y=robot.y+10;
 }*/
+/*
 points.depth=robot.depth;
 health.depth=robot.depth;
 points_score.depth=robot.depth;
@@ -475,11 +497,11 @@ health_score.depth=robot.depth;
 points.depth+=1;
 health.depth+=1;
 points_score.depth+=1;
-health_score.depth+=1;
-if(gameState===0){
+health_score.depth+=1;*/
+if(gameState==0){
 background(image1);
  game.starting();
-}else if(gameState===1){
+}else if(gameState==1){
     background(image1);
     lazer1.visible=false;
     lazer2.visible=false;
@@ -517,7 +539,8 @@ background(image1);
 
     
    game.play();
-  }else if (gameState===2){
+  }else if (gameState==2){
+
     background(image2);
     //Decreasing Score on Touching Balls
     if(robot.isTouching(ballsGroup) ){
@@ -579,7 +602,7 @@ background(image1);
   
     game.played();
    
-  }else if(gameState===6){
+  }else if(gameState==6){
     background(image2);
     ball1.remove();
     ball3.remove();
@@ -619,16 +642,16 @@ background(image1);
     edges=createEdgeSprites();
     robot.collide(edges);
     game.playing();
-  }else if(gameState===4){
+  }else if(gameState==4){
     background(image4);
       game.playWon();
       game.playWin();
-  game_ambience.stop();
+  gameSound.stop();
  
-  }else if(gameState===5){
+  }else if(gameState==5){
     background(image5);
     game.playOver();
-      game_ambience.stop();
+      gameSound.stop();
   }
   if(health_score===0){
       gameState=5;
@@ -722,7 +745,7 @@ function checkCookie() {
       
      //}
     }else{
-      location.reload();
+ 
     }
 
     
