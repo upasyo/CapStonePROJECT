@@ -217,8 +217,7 @@ class Game{
          suma=round(random(5000,12000));
          sumb=round(random(8000,16000));
          accessCode=suma+sumb;
-
-         Code='WASHINGTONDC'
+        
     }
 
 starting(){
