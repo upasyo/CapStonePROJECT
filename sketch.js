@@ -742,10 +742,10 @@ function checkCookie() {
     // if( usertaking.length>=4 && usertaking.length!==0 && usertaking.length<=13 && usertaking.indexOf(' ')==0 && usertaking.length!==0 ){
       if(usertaking!==null && usertaking!==" "  && usertaking.length>=4 && usertaking.length<=15  && usertaking.indexOf(' ') > 0===false && /^[a-zA-Z]/.test(usertaking)===true ){
     setCookie("playerName", usertaking, 30);
-      
+      location.reload();
      //}
     }else{
- 
+      location.reload();
     }
 
     
