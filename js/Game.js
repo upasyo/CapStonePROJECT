@@ -1731,7 +1731,7 @@ playWon(){
 playWin(){
 
 
-  var runFor = 19000
+  var runFor = 30000
   setTimeout(() => {
     $(".rating-widget").show();
     //$("#htw").show();
