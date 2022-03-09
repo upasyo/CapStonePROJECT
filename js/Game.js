@@ -1320,7 +1320,7 @@ points_score=points_score+round(random(20*4,45*4));
       var utterance = new SpeechSynthesisUtterance('Congratulations ,,,,'+usertaking.toLowerCase()+',, You have Won the Game with a score of ,,  '+points_score+', points'+'   ,,,  Share your performance to your friends and invite them through ,, Whatsapp or Facebook to get a chance to Play the Game.');
       utterance.voice = voices[3];
       utterance.lang = voices[4].lang;
-      utterance.volume=0.7;
+      utterance.volume=0.8;
       window.speechSynthesis.speak(utterance);
     }
    }else if(points_score!==undefined && usertaking==undefined || usertaking==null){
@@ -1329,7 +1329,7 @@ points_score=points_score+round(random(20*4,45*4));
       var utterance2 = new SpeechSynthesisUtterance('Congratulations ,,, You have Won the Game with a score of ,,  '+points_score+', points'+'  ,,,  Share your performance to your friends and invite them through ,, Whatsapp or Facebook to get a chance to Play the Game.');
       utterance2.voice = voices2[3];
       utterance2.lang = voices2[4].lang;
-      utterance2.volume=0.7;
+      utterance2.volume=0.8;
       window.speechSynthesis.speak(utterance2);
     }
 }
