@@ -30,30 +30,215 @@
         <div class ="txt" style="font-size:25px">
             <center>Queen Elizabeth's Diamond Crown Hunting</center>
         </div>
-         
+        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+<lottie-player src="https://assets8.lottiefiles.com/packages/lf20_d57jmwpq.json"  background="transparent"  speed="1"  style="width: 100px; height: 90px; " loop autoplay></lottie-player>
+      <!--<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+       
+       
 <CENTER>
-        <button id="play"class="custom-btn btn-5" onClick="window.open('game.html', '_blank', 'location=yes,height=1050, fullscreen=yes,width=2000,scrollbars=yes,status=yes'); upo()" title="Play the Game"><span>Play the Game</span></button>
+  <lottie-player src="https://assets5.lottiefiles.com/packages/lf20_qjtiav2l.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop  autoplay></lottie-player>--->
+  <CENTER>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <lottie-player src="https://assets9.lottiefiles.com/packages/lf20_m9fz64i8.json"  background="transparent"  speed="1" class="gif_1" loop  autoplay></lottie-player>
+
+      <button id="play"class="custom btn-5" onClick="window.open('game.html', '_blank', 'location=yes,height=1050, fullscreen=yes,width=2000,scrollbars=yes,status=yes'); upo()" title="Play the Game"><span>Play the Game</span></button>
       </CENTER>
-
-<script>
-jQuery(document).ready(function($) {
-
-if (window.history && window.history.pushState) {
-
-  window.history.pushState('forward', null, './#forward');
-
-  $(window).on('popstate', function() {
-    alert('Not Allowed to Press Back Button.');
-  });
-
+        
+       <style>
+           .gif_1{
+             width:900px;
+             height:300px;
+           }
+           @media only screen and (max-device-width:800px){
+            .gif_1{
+             width:350px;
+             height:200px;
+           }
+     
+           .origam {
+              border-radius: 50px;
+              background-color: #ffffff;
+              padding: 30px;
+              margin: 20px;
+              left:1px;
+              width:270px;
+              height:320px;
+              position:relative;
+              transition:0.5s;
+            }
+            .btn-14 {
+  background: rgb(255,151,0);
+  border: none;
+  z-index: 1;
+  top:-50px
 }
-});
+            
+#contact {
+  margin: 0;
+  box-sizing: border-box;
+  background-color: rgba(56, 111, 148, 0.5);
+  width:100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-box {
+  margin: 0;
+  box-sizing: border-box;
+  width: clamp(100px, 90%, 1000px);
+  margin: 30px 20px;
+  display: flex;
+  width:100%;
+  height:570px;
+  flex-wrap: wrap;
+}
+
+.contact-links, .contact-form-wrapper {
+  width: 50%;
+  margin: 0;
+  box-sizing: border-box;
+  padding: 8% 5% 10% 5%;
+}
+
+
+.contact-links {
+  margin: 0;
+  box-sizing: border-box;
+  background-color: #1f2e43;
+  height:200px;
+  background:
+    radial-gradient(
+      circle at 55% 92%, #426691 0 12%, transparent 12.2%
+    ), 
+    radial-gradient(
+      circle at 94% 72%, #426691 0 10%, transparent 10.2%
+    ), 
+    radial-gradient(
+      circle at 20% max(78%, 350px), #263a53 0 7%, transparent 7.2%
+    ), 
+    radial-gradient(
+      circle at 0% 0%, #263a53 0 40%, transparent 40.2%
+    ), 
+    #1f2e43;
+  border-radius: 10px 0 0 10px;
+}
+
+.contact-form-wrapper {
+  margin: 0;
+  box-sizing: border-box;
+  background-color: #ffffff8f;
+  border-radius: 0 10px 10px 0;
+height:380px;
+}
+
+
+  .contact-links, .contact-form-wrapper {
+    width: 100%;
+  }
+  
+  .contact-links {
+    border-radius: 10px 10px 0 0;
+  }
+  
+  .contact-form-wrapper {
+    border-radius: 0 0 10px 10px;
+  }
+
+
+
+
+h2 {
+  font-family: 'Arimo', sans-serif;
+  color: #fff;
+  font-size: clamp(30px, 6vw, 60px);
+  letter-spacing: 2px;
+  text-align: center;
+  transform: scale(.95, 1);
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 6px;
+}
+
+.link {
+  margin: 10px;
+  cursor: pointer;
+}
+
+#im {
+  width: 45px;
+  height: 45px;
+  filter: 
+    hue-rotate(220deg)
+    drop-shadow(2px 4px 4px #0006);
+  transition: 0.2s;
+  user-select: none;
+}
+
+#im:hover {
+  transform: scale(1.1, 1.1);
+}
+
+#im:active {
+  transform: scale(1.1, 1.1);
+  filter: 
+    hue-rotate(220deg)
+    drop-shadow(2px 4px 4px #222)
+    sepia(0.3);
+}
+
+.form-item {
+  position: relative;
+}
+
+label, input, textarea {
+  font-family: 'Poppins', sans-serif;
+}
+
+label {
+  position: absolute;
+  top: 10px;
+  left: 2%;
+  weight:bold;
+  color: #999;
+  font-size: clamp(14px, 1.5vw, 18px);
+  pointer-events: none;
+  user-select: none;
+}
+
+input, textarea {
+  width: 90%;
+  outline: 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 35px;
+  padding: 12px;
+  font-size: clamp(15px, 1.5vw, 18px);
+  transition: all .225s ease;
+}
+
+input:focus+label, 
+input:valid+label, 
+textarea:focus+label, 
+textarea:valid+label {
+  font-size: clamp(13px, 1.3vw, 16px);
+  color: #777;
+  top: -26px;
+  transition: all .225s ease;
+}
+
+           }
+       </style>
+    
+
+ 
+<script >
 //Post your code
 
- function upo() {
-	window.moveTo(0, 0);
-	window.resizeTo(screen.Width, screen.Height);
-}
 
 
   var isChrome = !!window.chrome; // "!!" converts the object to a boolean value
@@ -66,10 +251,11 @@ if (isChrome !== true) {
 
 </script>
 
+
  <style>
    button {
-  margin: 20px;
-  margin-top:12%;
+  margin: 10px;
+
  
   user-select: none;
   -webkit-user-select: none;
@@ -81,7 +267,7 @@ if (isChrome !== true) {
 @media screen and (max-width:999px) {
   button {
   margin: 20px;
-  margin-top:20%;
+  margin-top:10%;
  
   user-select: none;
   -webkit-user-select: none;
@@ -100,7 +286,7 @@ if (isChrome !== true) {
   background:#D3D3D3;
 }
 }
-.custom-btn {
+.custom {
   width: 130px;
   height: 40px;
   color: #fff;
@@ -256,18 +442,251 @@ width:40px;
     txt.innerHTML="Switch on the Desktop or Laptop whose width is more than 10 inch . <br> for better user experience";
   }
   // Find the right method, call on correct element
-function launchFullScreen(element) {
-  if(element.requestFullScreen) {
-    element.requestFullScreen();
-  } else if(element.mozRequestFullScreen) {
-    element.mozRequestFullScreen();
-  } else if(element.webkitRequestFullScreen) {
-    element.webkitRequestFullScreen();
-  }
-}
-
 
 </script>
+<center>
+<h3 class="games-head">Alternate Games</h3>
+<hr style="border:2px dashed red; border-radius:8em;">
+</center>
+<h4>Suggested For You :- </h4>
+
+<style>
+
+  .games-head{
+    color:rgb(255, 133, 19);
+    font-size:30px;
+    transition:0.5s;
+  }
+  .games-head:hover{
+    color:#ff0000;
+    font-size:33px;
+    transition:1s;
+  }
+
+  h4{
+    margin-left:45px;
+    font-size:22px;
+    color:rgb(255, 0, 98)
+  }
+
+</style>
+<div class ="gri">
+
+
+
+  
+  <div class ="origam" id="game1">
+      <div data-aos="zoom-in"
+      data-aos-anchor-placement="bottom-bottom"  
+      data-aos-duration="800">
+
+      <center>
+      <a href ="https://editor.p5js.org/upasyok/full/7QU7x0hAU"><img src="https://obj.whitehatjr.com/92f34a28-74e8-4c0b-9e35-6df1b0a291fc.png" width="250px" height="250px" title="BiCycle Riding"></a>
+      <h3> BiCycle Riding </h3>
+      </center>
+      <p></p>
+      </div>
+  </div>
+      <div id="aboutanimals"></div>
+  <div class="origam">
+      <div data-aos="zoom-in"
+      data-aos-anchor-placement="bottom-bottom" data-aos-duration="1500">
+      <center>
+      <a href="https://editor.p5js.org/upasyok/full/9HXeY00p5"><img src="https://obj.whitehatjr.com/1393eff7-e23c-4909-9453-b6d9ba1e06a7.png" width="250px" height="250px" title="Collecting Treasure"></a>
+      <h3> Treasure Collecting </h3>
+      </center>
+      </div>
+      </div>
+  <div class="origam" id="game3"> 
+      <div data-aos="zoom-in"
+      data-aos-anchor-placement="bottom-bottom" data-aos-duration="2500">
+      <center>
+      <a href="https://upasyo.github.io/C-38_PROJECT/"><img src="https://media-cldnry.s-nbcnews.com/image/upload/t_fit-1240w,f_auto,q_auto:best/rockcms/2021-04/210415-tyrannosaurus-rex-mn-1550-9612a9.jpg" width="250px" height="250px" title="Trex"></a>
+      <h3> Trex </h3>
+      </center>
+      <p> </p>
+      </div>
+      </div>
+  <div class="origam">
+      <div data-aos="zoom-in"
+      data-aos-anchor-placement="bottom-bottom" data-aos-duration="800">
+      <center>
+      <a href="https://studio.code.org/projects/gamelab/jSoKc1WLCw1ejJHiQmKIvAGZ9enh7tHRRYIVs0c9Ohg"><img src="https://s3-whjr-v2-prod-bucket.whjr.online/006c66e0-b766-4e6b-8397-d25077156405.jpg" width="250px" height="250px" title="Air Hockey Battle"></a>
+      <h3> Air Hockey Battle </h3>
+      </center>
+      <p>
+<center>
+  
+</center>
+      </p>
+      </div>
+       </div>
+  
+  <div class="origam" id="game5">
+      <div data-aos="zoom-in"
+      data-aos-anchor-placement="bottom-bottom" data-aos-duration="1500">
+      <center>
+          <a href="https://editor.p5js.org/upasyok/full/MeMm3DSoW"><img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxISEhUSExIVFRUVFRUQFRAVFRUVFRUVFRUWFhUVFxYYHSggGBolGxUVITEhJSkrLi4uFx8zODMtNygtLisBCgoKDg0OFxAQGy0lHx0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tKy0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLf/AABEIAKgBLAMBIgACEQEDEQH/xAAbAAABBQEBAAAAAAAAAAAAAAAEAQIDBQYAB//EAD4QAAEDAgMEBggEBgIDAQAAAAEAAgMEEQUSITFBUWEGEzJxkaEUIkJSgbHB0VOS4fAjM0NicqIVgiRj4hb/xAAaAQADAQEBAQAAAAAAAAAAAAABAgMEAAUG/8QANxEAAQMCBAMFCAAGAwEAAAAAAQACEQMhBBIxQRNRYTJxgZGhBRQiscHR4fAVI0JSkqIzYvEG/9oADAMBAAIRAxEAPwC1Nc0vc3IQWEMLibZ82ZzcutrACx5jmpeuO6x3XaSRrbW9tnPdZNkomF2fW/EHlbUJzaUAg3dp3H6afCy9LhVJdD4BmLAxMbnkZI6GNpOU1sP8HwSQL3ME+ER4Hfpd5kAFzppm/RVlG/NKT3lWkkYcLFBeiOY7Mz1uR0P2KniGVC9jgJDdefl9lowVSgKVVhMOeCBPZiDadtd4COypC1F0lI+Rmdovtuy/rN7wmPj5WWpr2uEhee9jmkh374ix8EC9qZZFPYoi1VBUoUBTcqmLUrY00oIQsUT4VZiFcadEPC7LZUz4VBJErt1MhpaZUa9IWqmcxMLVYyQId8SqHSpwgyE0hEOjUZanlBRFIQpC1IWppXKKy6ylyppC6UVHZJZPsuXLlHZdZPsksiuTbJtlIQmkISjZNXJbJLLpRXFIlskXSuXJEqRCVy5IlSgLpRTSlAUrWJAxLKK3lkikyppC85GUxddKQsd0gxJ7pTG0kMbpYbyNt1KtVFMTudFow1E1nETAAkn9iVtqd+9p1HtNOz4hWTK/NpKwPHviwePofJeZ4PikkDw5r9RtbfQjeCOC9CkxOOaNrsxYSA4WOw24eKyGvmPxNg8wfwtvu2VssdLdII08Ji/PoUQ/DmvF4Xh28sPqvHwKq6iJzTZwIPNUWMVMrXBwkcSOzIHHT7K4wvpaXNDKlnWt2dYAA8d42HyTMxRaYdceqm/DA3Fj6JA1F0lI55ytGqsG4fFK3PTyBw9w7QTuN9R8UDUR18QsyJ7RfMXsAeXHhpezeXjys/FMyy3VRZhnZodotFRdHW2u/U+AVi3CIh7DfC/zVFg3SSXI585YY2D135Sx4d7LANjnHgEXR9M6WXTOYz7sgy/7bPNYXVXuNytgptGgVg7DYvw2+AQ0+Cwu2xgd1x8lYCpa4XBBB3jUJj5wg17hoSiWNOyzVb0Waf5b7f2u18ws7XYNJH2mae8NR4hegmYJrnArVTxdRut1B+GY7Sy8ufEL237bfvuQ74V6NV4HDJchuVx2ubv7xvWfr+j8jLkDMOI2+C30sW12tisdXCub2bhZR0aicxXElMhZIFrD1mIhVxakIRT41GWJwUFAWpuVEFqYWoygocq6ymsmWXSio7JCFLZIWorlFZJZMrpsjbnadg4kpaUOygv7R112aiw81kGLacQaAEkCSeXIfui9F3s9zcGMW4wHOgA6nme6bdbpSEhCmyJREta89QAJQy6JEBUkMNillFQxUp3qX0VFnQKFz0mYrkJO2wUIU8jbpBGmCIW9smlqIkhsol52aUCCFCWLz/pDTOhncTseS9p3G5XohUFVRxytyyNDhz3c2kagqVakagEahacHiRRc4OHwuEGNRuD+LTzXmMchzA/AfFa+CUNY1pOoAv8AVFDorC05mOeDuvZ1u5c7o87dKPi39VjNGrMx6r0feqAbla7W5kEaW68zuq2eMOHaV7T0bXNaMoJsBstuXUXRixzPkBA1ytB17yVeYaxgk1ICZh4TXOcOgWeoeK5rGHqSrbo5g7YhdrdTtcdvd3K+u4b1EK6NosCEFNizOKzarWFPiNNFO3JMwObt7jxBGoPMLF4z0BBu6mlt/wCuTUfB4+o+K0UmMBDPxfgmDUVjcGfUUBmdOxzWsj9VhPqPe5zQ2xGh3qei6YZ79Y21gXXYeY0se/juVniBEwIkGYHTKdizJ6KhrnuZKbFj2hjgCAXNIHrDWwJG4qgYQlkLW0OMxy9h9ztLdhHwKNbUleZ4Xh1VDUxFzDbOAXtOZuU6G9tgtxW7EqIEhcriOsRTJ7rP9bdEU85G+6OVdKsaugjl7TdfeGhVDXdH3DVnrDhsP6q6jnUzZlSnVezQqT6LH6rBT0pGhBB4EId8C9Dnp45BZzQee8dxVNWYBvjN/wC07fgVtp4xps6yxVMI8dm6xzoVG6JXdTRlpyuBBOwcVC6mWsVAVlLSNVU9Wk6tWTqdMMCfOlhAdWmSNsCTu9ZHmFUuPVeRuUbTpdZ8Vihh6RqHw6k6D79Atvs7BOxuIbRFgbk8mjU/QdSFWvPXTBvstPyOv75q7bEg+jNCXNc+231R3Db++S0DKBx3LF7JYW0zVf2qhkn953PivU/+hxTX4htCmIZRGUAbHl4CB4FAxU90QKY7grmkwk7SrWGiaNy3PrgLwQ0lZP0V28JGQHgthLSDghJKVo3KYryiWQs1LAQhXMVzWtQLmK7XSEEIyG6kESIiFlNZMXLlp5HqEqYMT+rWFAyUyCK6ndTBTRNsE8aqbnFVbTEXVc9tlEjpWoV7VRplScI0XRTWVBi1a4TG2g0PkFfBqpekFKTaQf4n6LPi6cskbLVgqkVIO6NoMSGx3ij+uadhWMhlIR0NURvXliqQvZyrRuKjcqyLECp21gKs2oFMtKKJTLqLrwd6XrArByWE4uSZkwvTMydBEB6kjkQeZKJEyRTnFQxxaQdN4/xLvoVYQVzXbHDfpsOhsVSzxxuuXaE6Zr2PZLdvc4pgpwdWPB7XnmO0cyPBIQUQQtO2dSsqFkHyzR6i5HraDUaAW08VPTY2Scrm72tuOLuSC5at5a4WIBHA6oSXDGezpyQzasCwJAvsuimVSdpc3RK9jX9oKvqcPtutzQctItE2oB2qN1Mw6g2PktDMQR2liqYU/wBJlZLE2CJpc74d+4Lz2eR00ttpc4Ac8zrDzK9I6dYRI6IGN2e21oGziRxKy3QfCi+dz3A/wRvHtmwA+Gp8F5eNdUxFZrP6dvqfKy+o9kGjgMDUryC83d0jst8TrzkCbLUYXh4iY1nAAd7t58VbNisuNLzS2svZkQANAvjHvc9xc65Nz3lTxvRbAgae10a2QKLwq03c02VAzlHvddA1MaLQi9VlTCgJI1bS8EBKxa2FSF0CWJQFPkTwxUzJlp2tTwzkijTWStaeCwZkwpkahCqaMqR0RO5EwU5A2JXEQqMY4lAuBUErFc9VxTnQNISionNAlZ4MTxA1wLXC4ItZWDqcXUghA3qhqAiFBtEgzyXnWKYe6J5G0bQeIQTXkL02rwlsrbO1G47weIWCx3DHU7vWBynY8ag8jwK82tR3avZw9Qu+E6oQTJ4mVeatg9r5ppr4x7QWSYWvhu5HyVo2cqVtQVRuxWIbye4FQPx5g2NJ79FQVQN13u9R39JWmFSnioWMl6QP9kNHiUDPikr9rz3DT5JveQE49n1DrAW2rMSazUvA5b/gFUVXSV2yMf8AY/QLNwxucdASfFXNFhO95/6j7puO92lkxw1Kld5lRN66od7TzzOg+gVhFgNQNWyNB5PcD5BNnxqKnGVoBPut+pVQcaqpn2YSODWXAHeVFwpg/Fc9FqpvxDx/LAa3r9vwtCx2IRbLvHMtf/8ASlHSORv8+nOhBzAEbNmjh9UDSittrUAciM30R8U1SNssbuTmfZO0uHZzeh+ag/hHt8M9xc31AhFux6mmABeWEX7Qtt56jzRNM54aTFKHjKctjpfdyVZJTF4/iQwu/wASWHzb9UGcJZtY2aM8WnMPIkqzaj5uJ8x81mfQoG4cR4td8iHf6laJmNSs/mRnTeNP0VjR4yx+jXG/AhY1j6lnZlbIPdkvf9/FEU+Kvac0lMbj247O8lcVRuCP3pKznDuPYcHdxg+ToK3YqrjXVCQSxxuLfUbnOYXsCTppz0WZpcUhJ9SYsPuv9X52Vi/CmVbLSEuDTdro3W1tqeB0VWuzCWQT3rNVp5bVpaO6/kYB81oHSKF7ln//AMzPH/Iq5G/2yXc3/XTyS9ZiMXajhmHFjsrv9rDyTiqR2mEd1x6X9FkOEY//AIqzD0MsP+3w/wCxV61O65UrekTWaTQTxf3Fl2fm0+SNpsQhk1ZI077Bwv4HVO2tTcYm/LQ+sKL8HiKbczmGOYEt/wAhI9Uf1ya6oumWTSxVyhZw6dEx4BUDmIjIuyJwYTBBmNII0WY0ojTZkwWzCcGBI0qVi8mYXqQh3NUjX6Jsmia1yK5OAJ3J3oxRcJFlNdKXlNkVS6nTBSq3NkywR4hSmiCg42W0UNdRtkaWuAIOhBFwVZXCa8hDPdHh2XlmO9CnXLobEe4TqO47wsjVYBM02LfhcfVe7VMQKr6ijY/RzQe/7pX0WP0stNPH16djBHr+V4a/CZvcPiPumf8AESn2bd5C9drOi0btWSPZys1w8xfzVJWdCp/YqGnvuz5XWc4Urcz2hm3A75/fVYFuBv8Aac0fG6f6HTx9t+blf6BW2I9FKtri0tc/QG7C5wsSQPkqp/Raq/BkHexwUjSLdlsDswl1QR0gfP7KOTG42C0bL/6j7qtqsVlk0vYH2W/u5V1F0Ql9tru4NPzsrKmwAx9mJ1+JaSfGyEPKkamGp3aMx5rM0OCvfq/QcN5+y0NLTsjFmi3zPeURNTvb2muA4kEDzUZCZrQ1Za+IfV1NuSeHqWIXUEbLqypqiNm654lVBnVZiiaWlO0+Cn69gNszR8Qq+fEHOFhoOSq6kXCbixohllbvCoqORpEpjc8u0JOttLWdu1ui5OiEJ1je5vxzt89fNeW5N6PpMZqIuzK4cib/ADSivdE0lr67ofIfZjlHOwPn91Y4dhIp4xGG5QLk7bXJuVnqHp5O3R4Dx4FaCi6dwP0e0tPkr06wBmLqFak57ckmOW3kiuqTTErCnxKkm7L23PMAoh1A06td9VpbiGlYHYMjRUZjQVTg8D+1DGT7waAfEarQyYeQh5KayoXtcIN1NtOpSMtkHmLHzWdGBtb/AC5po+Qfmb+V91PSQStJD5GvHEMyu5X9YjyCtzTppp1zQxp+G3dYeWiapWrVAc5mdyAT/kfi9UHkTSxG+jpDAqZws/DKCyJQ1FGBd1KOcI5CtCGngiYk4rgV5pMr1tFHUAWQzLXRbm3ChMZ4JmmyDhdEsTlBHdStSFPKekcnNUcr7IIpiY9OzFNL0wSSonvQUj9UTPqhciqwBSeUrdVzmFStCVGV0KIRrurUoCUrpXZVAWLsimypS1dmK7KEM6O+hAI4HUKsm6O07/6Yb/iS3y2eSucq7KgYOqItos1L0Qi3PcO+x+yFd0P4S+Lf1Wse8IV7ygKTTsg6sW7rNO6JEbZR+U/dMHRZu+T/AF/VaQhJZN7uzcKTsVU2VLT9G6dvau7vNh4BFuwemOhhZ+XXxR1klk4pMGgCka9U6lVcnRmjP9Mj/F7x9VS9IOjMccRfAJC4EXbcO9XebWuVr7KCtq2xRukebNaMx+w5oOo04NoT08RVzAC87c1iMG6OPmuS50YA0cWnU91wrdmBV0X8qrvbcc3y1WXxLpNPO45XFjL2ygkafUqOmxqpiOZsrjyJNj8Nix5rS1pI77+S9n3YA5alVrTuIJA6Fw9YDh1i618XSatieIzac2uQGuB5ixFxZWVJ08jPqzQuYdh5fBVPRXEopCTbK91g79L7AT5qwpMCtM6V7muBc5wbb3r7b8LqjP5jQ5v/AIsteaFR1OoNPGe7p1V7T4zRzdmQAncfVKKNHmF2PB/fEKgqcBpn/wBMNPFt2+Q0QT8DfHrBPIw7gTceX2VMtVul1nz0Xa2/ei0z6Z43X7tVCSs9NjdfStzPcyRlwLnbrs4FHM6ZCw9IpntB9q1294uga8GHBH3YOEscrLMuzKKmxaim7MoaTuJy/NHDDwdWvaRx0VG1WHdSOHqDZXdglFlCWlRm6hC0yp3aJzHIV105h5roQDkdk0TWx23pvWKMypYKpZT5gFA+UJjpm+80crhQmZvEH4hEBAlSOedyGOY70olHEeKic/XtBUAUXFSjMN6QFQOk/uCYJed0YlLmRJPNdcIZ8oUJlKbKlNQBWISWVd1yaZkQyUOKArNcFVPqrbXAcr2+ZSNrAdL37iD9UeGV3GHJW6hmKA9I3a919fBJ6TfTht12d64UygawRT232JTE221AumUXpA4j8w+6cNKmag5Il5sozKoxJv3cbi3ilzDiPEJwFEknRO61IZV2QLjGusl+JM65Z3p7MfRTbZmb4a/Wy0PVoXEaFksbmOvqLHlwI7ktVmdjmjUgq2Er8GvTqu0a4HwBXjUk5DPV22TcKndmPrOLcuod719yOxjApqZxzNLmX9Vw2W7z8igoc5NmtNzsAFyfgFh4rB2jB5HX97l7QwlUxw2lw2LRIPjoPGI0N1oujLz6Q0D97D9AvTRUrH9D+j747yyDKSLNYdrRxPM8FqRHzWnCshrnOtmMgdPysPtWs0vZTYZyNAJGhPQ7xpPRTmqUTplGYuajcxaw1q8vMVHiELJmhr72Dg/Q21F/uUQKkAWtpssh3BMR4bZmFxqOjLNl1RTwP7UTTztY+IQwwuL2XStHuh+iIckBSnD0zcgKgxFVujit2XlNzKJ8iaZRu1WHKvQ4glGN1UJGqhZOeBSekn3fNENK7iNRt7BRdZvvzUGa+0oPGHZIJCDrkIHedB81wZJy80HVLSshA2knfJJM4REuLhmdcuvrfZptVlV4dFT08kkbswe0RjgQ5wB8rqbo7hcRhBe25JNiHHZv7Jttv4KPpW7IyKNo9XMXWvuaLWuf8l6xqh9YU2udlB0LrQL/AE5rCWxSLsozRsLyVY4HAWQtAbxP0+irMRb1lawW/lhot3m58j5KTD+kVyyLqrDRmbrWnlewbqhqKbNNUSe0A/JqNoBa3uvr4KTQ9pqOdEkHcHtGNidplF0HKG6SNo0HUdEDDSsqHzSyGzbu9Y3Nm3AaNOXyVjhFHTMeZI5A4sBcRYjQDmq/CsUZDGYzCH32/wARoBAJIFviupJSIaiQj1nm20aB7hcX7vmtVYPdmZmIbIaPiEEWGncpMAs6L3J+G83Op6qbAq+GMOL32c4k9lx1O3UA8AnUpEtTJK3Xg7XshuXv22KPwynaIWuc2+ma99NOGuzS/wAUJ0cZdrnnaTxGhO0adwPxUn1WHivGptrOp5RyCAa8ZQdukXjnJ5oB+Hs67qmgaAX27Trx90+SuaSk6luUcb/v970BhYz1EzifaNt+g9Vuzl8lcWF0uIrOJDS6YA3m8SfmlFONomVSVlOyedzS03aA3NcW0F9hHG42oeWgZHLG1na7d9ND7A05jzXQUbZczpAQSS62l/WOm34o2joI2ODhrbXL6uttdwudmzuV3VOFLWuNhEbTHOfogBmiY18dbbT6roTmqnu3M8LNFifgQCuwHa+Q2u67vzH7t80HT5urkcQcxafVtqTIQ06ctqkoK4RtymN5PIfLXv8AFc9hcHNb/wBW6jRo7+cLgdPE+f4R3SB94cu97mt+GpPyHigxgkQjznZlL7fC4F12Jz3MZDXFozH1RexuBu7rrq7Es0Za2NwuAMzhYAAg8eS6k2rkYGEgEkkgxvv4BF1i6duk7bW5p2FUmaEsJs1xBtzve/gW+CBw6jZI+Tc0Ehp7js8CPBWNJOGx6AnRzhbabA5dOYAQuDDIzXbvB232/IhDjOio4EiSN+dyfII8PQEaD6R9VfU7msaG32ce+641A4oFtRfaEplZwWTLeU5JKLFVzSGoQRypunFHIEqLcQdoCiZTsGoY0dwAUDhzTNfeTZeSEI9k1t9vMJHSg+0qqR54qMynin4UrlbZxx8yoXlVwlPFJ1x4o8NEI1wPBRvehhUnilM6bKV0KUyJWyKAvBXBwXQuW6Mo3apWSKNsZ3aKUQLzDC1DMn3HFRPfY8U7IAbXThG3bdCQmIJXNl5d6SauijLWvcA59wxupc4jaAALnals3es1WzS/8gwwwGbqIXEta4Ncwyhzc4LtL2+aZlMPJ6AnUD1NheEQSI/P06LSS10bbF+ZtyGDNHILuOgaLt1J4IafG6ZrczpAG5jHmc1wGcXu25HaFjpt0VNBhxZNRvkNS0gz1ElPUT9dlZTtOR+mgJcWm/NRxQMqKT0WVwZljhxSSU7QKiad8o7xGWgc3BPwqYIkmJAMd5FrXgj1VDmgxE9e6eauRitO7KWm+YOc0hjyHNb2iLDUDedyF/5SCQAseHAuEYLA4gvIuGXA7Vt21Rue6Yu6iKxiw1jIoBa7DVuOUanaI4m3+KF6M4XJB6JA+MiUPq8Qki0veNgp4b2NtczSO5NlY1hdNxtI5E8u4cpOqm6kS4N+nUD7+SWTG6ZpIMzQRcEEnQjaDoppaw5hGM2ctziPI/MW+8G2vbmszg/R2VtSZKxoiZEPSX9Y5rWuJcRG0uBNg548GlXlQJZavDHmYOc9rusmhkOR7YpDI8BzbXZoARs3LRWp0mOhrphpJMiJAJiwOwv3jqs9Oi5zZMi4HrE37/REmU3DSJA8guDOrkzEC1yBbUC48Qo5KlzXNaWuDnXytMbwXWFzlGXWwQGFS1NVHXzwukke9zYoQJDmjY+QyPyEn1BlybLbFYNjMTIm1L5XOpaOWpk/iEytlqJLRjPm7QAeACbJHt4ZIMEgxE3mAdMukkDvnVM2gHCQTGu0RJ+gnuUFXVmMB0gcwXtme17RfhchDHH4thkaUF0lrB6DTtZJM9ss00v/AJDs8n8P+ENQSAy9yO9Y9bsNg21aeZ0i5HkY3E6grLXPDflF9PXustqcZh3OYOQFlG7FoffCxy5aR7OYNz6fZS4xWsdiUGzM23Cw+SazEoL65OWn6LKrl38OZzPp9kwxDlqZcWiOl227r/MKE4jFxb4D7LOLkP4bT5n0+yPvTlqoa6N5yZwS4hoG25JsBZHTwOhc6M5QWGzgNl94S9E6OidVwBpeZGRskdlDTGZGtMji5xN7gkDQbWofGJ2ulc6ISEPJeesyg5iSTYNOzVeZXDadQNbOk3HW3yWxgJYS4jXb96pWzDf8An5991WGSx12p4qtNUAUIR/XaohtraqpbOn+kHiqaqZajXusdCmOcOCD6/VP69UAhCFKLKNyaZQVEZEwC6E4phK4yJpcnRXXSZlxsmErlyfnUkb9ENdSR7F0Ir011QOKayuC5cvGDAVU1HSkfVg7lCahcuTBgSOqOKjdVKtq6WF7i98LHOO1xaCTbZqkXKjREwpZ3FDuw6m/Aj4dgKF+H0/4Mey3ZGzguXKwc7mfNKUO6hg/BZw7I2cEjqCH8KP8oXLk8nmgEz0GL8JndlCX0CE7I2NI2eqNLpFyBe4N1TDVIMLjBv1bLcQE84bD7jPyhIuUxVeTqngIZ1FD7je7KEx9LFuY38q5cq8R43PmV2UFRiCIf02nllTDFFuY38oXLkpqv/uPmUQ0clzIo/w2n/qPspIqSPaWMPDQfJcuU3VKn9x80zGg7JsjYW6ujaOQAPkniKBzc3Vi17aixOhOwLlykKtT+4+Z+6cNHIeQROGVTKd5fHGAS10eax0DxY233SGoNu0e4Aj5rlyUkkyTPfdEHZDuhDjcjbvQtVFktY7Vy5VaiQmNmNrXsnidIuWhqRNE3JPEiRcrhIndYkzLlyoEF2dJmXLkwQXZ1xckXLiFy7MngpFy6EV//9k=" width="250px" height="250px" title="Aeroplane Flying Game"></a>
+          <h3> Aeroplane Flying Game </h3>
+      </center>
+  </div>
+  </div>
+  <div class="origam">
+      <div data-aos="zoom-in"
+      data-aos-anchor-placement="bottom-bottom" data-aos-duration="2800">
+      <center>
+          <a href ="https://upasyo.github.io/C-35_PROJECT/"><img src="https://obj.whitehatjr.com/393d26ed-3bfa-4ccf-a378-8510c3f395b1.png" width="250px" height="250px" title="Air Balloon Ride"></a>
+          <h3> Air Balloon Ride </h3>
+      </center>
+  </div>
+  </div>
+ <!-- <div class="origam">
+      <div data-aos="zoom-in"
+      data-aos-anchor-placement="bottom-bottom" data-aos-duration="1000">
+      <center>
+          <a href="http://origami.me/flying-cicada/"><img src="cicada.png" width="200px" height="200px"></a>
+          <h3> Cicada </h3>
+      </center>
+      <p>
+      <ol>
+          <li>All cicada species in North America came from a common ancestor</li>
+          <li>cicada species switches from being on a 13-year cycle to a 17-year cycle</li>
+      </ol>
+      </p>
+  </div>
+  </div>
+  <div class="origam">
+      <div data-aos="zoom-in"
+      data-aos-anchor-placement="bottom-bottom" data-aos-duration="2500">
+      <center>
+         <a href="http://origami.me/puppy/"><img src="dog.png" width="200px" height="200px"></a>
+          <h3> Dogs </h3>
+      </center>
+      <p>
+      <ol>
+         
+      </ol>
+      </p>
+  </div>
+</div>-->
+</center>
+
+
+<script>
+  if($(window).width()<=800){
+     $("#game5").hide();
+     $("#game3").hide();
+     $("#game1").hide();
+  }
+</script>
+
+<section id="contact">
+  <div class="contact-box">
+    <div class="contact-links">
+      <h2>CONTACT US</h2>
+      <div class="links">
+        <div class="link">
+<!--          <a><img src="https://i.postimg.cc/m2mg2Hjm/gmail.png" alt="linkedin"></a>
+        </div>
+        <div class="link">
+          <a><img src="https://i.postimg.cc/YCV2QBJg/github.png" alt="github"></a>
+        </div>
+        <div class="link">
+          <a><img src="https://i.postimg.cc/W4Znvrry/codepen.png" alt="codepen"></a>
+        </div>
+        <div class="link">--->
+          <a href="mailto:upasyokushari2007@gmail.com"><img id="im" src="https://i.postimg.cc/NjLfyjPB/email.png" alt="email"></a>
+        </div>
+      </div>
+    </div>
+    <div class="contact-form-wrapper">
+      <form onsubmit="send(); reset(); return false">
+        <div class="form-item">
+          <input id="input" type="text" name="sender" required>
+          <label>Name:</label>
+        </div>
+        <div class="form-item">
+          <input id="email" type="email" name="email" required>
+          <label>Email:</label>
+        </div>
+        <div class="form-item">
+          <textarea id="textarea" name="message" rows="6" required></textarea>
+          <label>Message:</label>
+        </div>
+        <center>
+          <div class="container">
+    <button type="submit" class="custom-btn btn-14" id="button"> SUBMIT </button>
+  </div>
+          </center>
+          <div id="after-submit">
+            <center>
+            
+          
+          </center>
+          </div>
+      </form>
+      
+    </div>
+  </div>
+  
+</section>
+
+
+<script src="https://smtpjs.com/v3/smtp.js">
+</script>
+<script>
+  $("#after-submit").html("<center><img src='https://uxwing.com/wp-content/themes/uxwing/download/48-checkmark-cross/success-green-check-mark.png' width='250px' height='250px'/><h3>Sent Successfully</h3></center>");
+  $("#after-submit").hide();
+ 
+  if(document.getElementById("input").value)
+  $(function() {
+  $( "#button" ).click(function() {
+    $( "#button" ).addClass( "onclic", 250, validate);
+  });
+
+  function validate() {
+    setTimeout(function() {
+      $( "#button" ).removeClass( "onclic" );
+      $( "#button" ).addClass( "validate", 450, callback );
+    }, 2250 );
+  }
+    function callback() {
+      setTimeout(function() {
+        $( "#button" ).removeClass( "validate" );
+      }, 1250 );
+    }
+  });
+
+
+
+function send(){
+
+  Email.send({
+    //SecureToken:"d87267da-eefc-47d2-9935-1604daba5b39",
+    Host : "smtp.gmail.com",
+    Username : "sites.upasyo@gmail.com",
+    Password : "ijvgyekwjwfqihrq",
+    To : "sites.upasyo@gmail.com",
+    From :document.getElementById("email").value ,
+    Subject : "Contact Request from Upasyo's Gaming Site by "+document.getElementById("input").value.toUpperCase(),
+    Body :"Email:- <b>"+document.getElementById("email").value+"</b>"+
+    "<br>"+"Name :- <b>"+document.getElementById("input").value.toUpperCase()+"</b>"+
+    "<br>"+"Text Message :- <b>"+document.getElementById("textarea").value+"</b> "
+}).then(
+  sent()
+)
+}
+
+function sent(){
+ $(".form-item").hide();
+ $("#button").hide();
+ $("#after-submit").show();
+}
+</script>
+
+
+
+
 <script>
   $(document).ready(function(){
      $(document).bind("contextmenu",function(e){
@@ -276,11 +695,11 @@ function launchFullScreen(element) {
   });
   </script>
                  <script>
-		     /*
-                  function check(e)
+                  /*function check(e)
                   {
                   alert(e.keyCode);
-                  }
+                  }*/
+                  /*
                   document.onkeydown = function(e) {
                           if (e.ctrlKey && (e.keyCode === 67 || e.keyCode === 86 || e.keyCode === 85 || e.keyCode === 117)) {//Alt+c, Alt+v will also be disabled sadly.
                             console.log("Not Allowed to inspect & to view the source code or resource code && copying ,pasting and cutting was disabled");
@@ -291,5 +710,6 @@ function launchFullScreen(element) {
                           return false;
                   };*/
                   </script>
+
 </body>
 </html>
