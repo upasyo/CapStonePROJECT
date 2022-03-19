@@ -217,7 +217,7 @@ class Game{
          suma=round(random(5000,12000));
          sumb=round(random(8000,16000));
          accessCode=suma+sumb;
-        
+
     }
 
 starting(){
@@ -1320,7 +1320,7 @@ points_score=points_score+round(random(20*4,45*4));
       var utterance = new SpeechSynthesisUtterance('Congratulations ,,,,'+usertaking.toLowerCase()+',, You have Won the Game with a score of ,,  '+points_score+', points'+'   ,,,  Share your performance to your friends and invite them through ,, Whatsapp or Facebook to get a chance to Play the Game.');
       utterance.voice = voices[3];
       utterance.lang = voices[4].lang;
-      utterance.volume=0.8;
+      utterance.volume=0.7;
       window.speechSynthesis.speak(utterance);
     }
    }else if(points_score!==undefined && usertaking==undefined || usertaking==null){
@@ -1329,7 +1329,7 @@ points_score=points_score+round(random(20*4,45*4));
       var utterance2 = new SpeechSynthesisUtterance('Congratulations ,,, You have Won the Game with a score of ,,  '+points_score+', points'+'  ,,,  Share your performance to your friends and invite them through ,, Whatsapp or Facebook to get a chance to Play the Game.');
       utterance2.voice = voices2[3];
       utterance2.lang = voices2[4].lang;
-      utterance2.volume=0.8;
+      utterance2.volume=0.7;
       window.speechSynthesis.speak(utterance2);
     }
 }
@@ -1731,13 +1731,17 @@ playWon(){
 playWin(){
 
 
-  var runFor = 30000
+  var runFor = 1000
   setTimeout(() => {
+    $("#lottie").show();
     $(".rating-widget").show();
     //$("#htw").show();
     $("#whatsapp_share_button").show();
     $("#facebook_share_button").show();
     $("#copy_btn").show();
+  
+
+      
     if(usertaking!==undefined && usertaking!==null && points_score!==undefined){
       document.getElementById("p1").innerHTML="Hi! "+usertaking.toUpperCase()+" has won the Diamond as well as the Game with a score of "+points_score+". You Could also stand a chance to win the game. Click on the Link below to Play the Game:- https://bit.ly/DiamondCrownGame";
     }else if(usertaking==undefined && usertaking==null){
@@ -2011,6 +2015,7 @@ playOver(){
         $("canvas").remove(); 
         $("#btn-7").show();
         this.button.hide();
+        $(".rating-stars").css("margin-top","20%");
         $("#htw").show();
         $("#whatsapp_share_button").show();
         $("#facebook_share_button").show();
