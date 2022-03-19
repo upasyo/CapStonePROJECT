@@ -651,7 +651,7 @@ background(image1);
   }else if(gameState==5){
     background(image5);
     game.playOver();
-    gameSound.stop();
+      gameSound.stop();
   }
   if(health_score===0){
       gameState=5;
