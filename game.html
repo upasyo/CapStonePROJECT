@@ -17,6 +17,7 @@
     <script src="js/Security.js"></script>
     <script src="js/Game.js"></script>
     <script src="p5.play.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
     <base target="_blank"/>
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,500,700" rel="stylesheet">
@@ -42,20 +43,19 @@
     </head>
  
    <body background="https://i.postimg.cc/VNT2s4bx/Whatsapp-Background.png" id="body2">
-     <script>
 
-  </script>
+
     <div class ="txt">
     <center>Queen Elizabeth's Diamond Crown Hunting</center>
     </div>
     <center>
-    <div id="htw">Rate The Game by Giving Stars :-</div>
-  </center>
-<style>
-  #htw{
-    top:50%;
-  }
-</style>
+      <lottie-player id="lottie" src="https://assets5.lottiefiles.com/packages/lf20_qjtiav2l.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop  autoplay></lottie-player>
+    </center>
+    <script>
+      $("#lottie").hide();
+        </script>
+    <center>
+    
     <section class='rating-widget'>
   
         <!-- Rating Stars Box -->
@@ -182,7 +182,7 @@
         $('.success-box').fadeIn(200);  
         $('.success-box div.text-message').html("<span><b>" + msg + "</b></span>");
         $('ul').remove();
-        $('.rating-stars').css("margin-top","20%");
+        $('.rating-stars').css("margin-top","2%");
         $('.success-box img').show();
         $('.success-box').show();
 
@@ -366,12 +366,12 @@
       .rating-stars ul {
         list-style-type:none;
         padding:0px;
-      margin-top:20%;
+      margin-top:2%;
       }
       .rating-stars ab {
         list-style-type:none;
         padding:0px;
-      margin-top:20%;
+      margin-top:2%;
       }
       .rating-stars ul > li.star {
         display:inline-block;
@@ -483,13 +483,14 @@ $("#facebook_share_button").click(function(){
   </a>
    </div>
    <div id="btn-8">
+     <center>
    <a type="button" id="btn-7" class="btn btn-danger btn-lg text-white" onclick="reload()" >Reload the Page for Playing Again</a>
+  </center>
   </div>
   <style>
     #btn-7{
       width:300px;
       top:85%;
-      right:30%;
     }
   </style>
   </center>
@@ -593,7 +594,7 @@ function updateUrl(url,key,value){
   });
   </script>
                  <script>
-                 
+               
                   function check(e)
                   {
                   alert(e.keyCode);
