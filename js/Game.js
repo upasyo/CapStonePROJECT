@@ -1933,7 +1933,7 @@ playOver(){
         var utterance8 = new SpeechSynthesisUtterance('So Sorry!! ,'+usertaking.toLowerCase()+',, You have lost the Game with a score of ,,  '+points_score+', points'+'   ,,,  Share your score to your friends and invite them through ,, Whatsapp or Facebook to get a chance to Play the Game.');
         utterance8.voice = voices5[3];
         utterance8.lang = voices5[4].lang;
-        utterance8.volume=0.9;
+        utterance8.volume=1;
         window.speechSynthesis.speak(utterance8);
       }
     }else if(points_score!==undefined){ 
@@ -1942,7 +1942,7 @@ playOver(){
         var utterance9 = new SpeechSynthesisUtterance('So Sorry , You have lost the Game with a score of ,,  '+points_score+', points'+'    ,,  Share your score to your friends and invite them through ,, Whatsapp or Facebook to get a chance to Play the Game.');
         utterance9.voice = voices6[3];
         utterance9.lang = voices6[4].lang;
-        utterance9.volume=0.9;
+        utterance9.volume=1;
         window.speechSynthesis.speak(utterance9);
       }    
   }
