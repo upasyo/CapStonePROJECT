@@ -1516,12 +1516,12 @@ document.addEventListener("DOMContentLoaded", function () {
  }else{
   if(afteruser.toUpperCase()!==capital && afteruser!==undefined && afteruser!==null){
     alert("Wrong Answer . Just only one step left to Win the Game");
- 
- }/*else if(afteruser===undefined){
+    
+ }else if(afteruser===undefined){
    alert("Answer your Question First to Get the Diamond Crown and Won the Game");
  }else if(afteruser===null){
   alert("Answer your Question First to Get the Diamond Crown and Won the Game. Do not Press the Cancel BUTTON");
- }*/
+ }
  }
 });
 console.log(afteruser);
@@ -1531,7 +1531,7 @@ drawSprites();
 if(diamond.x===25000){
   fill("red");
   textSize(15);
-  text("What is the Capital of USA",width/2.14,height/2.4);
+  text("What is the Capital of USA ?",width/2.14,height/2.4);
 }
 
 if(robot.isTouching(blocktoblock)===true){
@@ -1731,7 +1731,7 @@ playWon(){
 playWin(){
 
 
-  var runFor = 1000
+  var runFor = 20000
   setTimeout(() => {
     $("#lottie").show();
     $(".rating-widget").show();
