@@ -14,7 +14,7 @@ class Security{
 }
 
 authentication(constf,code){
-   if(constf === code.toUpperCase() && code.indexOf(' ') >= 0){
+   if(constf === code.toUpperCase() /*&& code.indexOf(' ') >= 0*/){
       return true;
    }else{
       return false;
