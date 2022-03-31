@@ -1219,6 +1219,7 @@ if(robot.isTouching(diamond)){
   robot.setVelocity(0,0);
   diamond.x=25000;
   diamond.setVelocity(0,0);
+  gameSound.stop();
 }
 if(diamond.x===25000){
   this.button3.show();
@@ -1236,7 +1237,7 @@ this.button3.mousePressed(()=>{
 }*/
 
 
-gameSound.stop();
+
 
 
 if(security.authentication(capital,afteruser)){
@@ -1335,193 +1336,17 @@ points_score=points_score+round(random(20*4,45*4));
 }
 
  score_sound.play();
- const btnConfetti = document.getElementById("confetti-btn");
 
-let status = true;
-let particlesContainer;
-let particlesOptions;
-
-btnConfetti.addEventListener("click", function () {
-  toggleStatus(!status);
-});
-
-function toggleStatus(newStatus) {
-  status = newStatus;
-
-  if (status) {
-    tsParticles.load(particlesOptions).then((container) => {
-      particlesContainer = container;
-
-      document.querySelector(".fa-play").classList.add("hidden");
-      document.querySelector(".fa-pause").classList.remove("hidden");
-    });
-  } else {
-    if (particlesContainer) {
-      particlesContainer.destroy();
-      particlesContainer = undefined;
-
-      document.querySelector(".fa-play").classList.remove("hidden");
-      document.querySelector(".fa-pause").classList.add("hidden");
-    }
-  }
-}
-
-document.addEventListener("DOMContentLoaded", function () {
-  particlesOptions = {
-    fpsLimit: 60,
-    particles: {
-      number: {
-        value: 0
-      },
-      color: {
-        value: "#f00"
-      },
-      shape: {
-        type: ["circle", "square", "polygon"],
-        options: {
-          polygon: {
-            sides: 6
-          }
-        }
-      },
-      opacity: {
-        value: { min: 0, max: 1 },
-        animation: {
-          enable: true,
-          speed: 1,
-          startValue: "max",
-          destroy: "min"
-        }
-      },
-      size: {
-        value: { min: 3, max: 7 }
-      },
-      life: {
-        duration: {
-          sync: true,
-          value: 7
-        },
-        count: 1
-      },
-      move: {
-        enable: true,
-        gravity: {
-          enable: true
-        },
-        drift: {
-          min: -2,
-          max: 2
-        },
-        speed: { min: 10, max: 30 },
-        decay: 0.1,
-        direction: "none",
-        random: false,
-        straight: false,
-        outModes: {
-          default: "destroy",
-          top: "none"
-        }
-      },
-      rotate: {
-        value: {
-          min: 0,
-          max: 360
-        },
-        direction: "random",
-        move: true,
-        animation: {
-          enable: true,
-          speed: 60
-        }
-      },
-      tilt: {
-        direction: "random",
-        enable: true,
-        move: true,
-        value: {
-          min: 0,
-          max: 360
-        },
-        animation: {
-          enable: true,
-          speed: 60
-        }
-      },
-      roll: {
-        darken: {
-          enable: true,
-          value: 25
-        },
-        enable: true,
-        speed: {
-          min: 15,
-          max: 25
-        }
-      },
-      wobble: {
-        distance: 30,
-        enable: true,
-        move: true,
-        speed: {
-          min: -15,
-          max: 15
-        }
-      }
-    },
-    detectRetina: true,
-    emitters: {
-      direction: "none",
-      spawnColor: {
-        value: "#ff0000",
-        animation: {
-          h: {
-            enable: true,
-            offset: {
-              min: -1.4,
-              max: 1.4
-            },
-            speed: 0.1,
-            sync: false
-          },
-          l: {
-            enable: true,
-            offset: {
-              min: 20,
-              max: 80
-            },
-            speed: 0,
-            sync: false
-          }
-        }
-      },
-      life: {
-        count: 0,
-        duration: 0.1,
-        delay: 0.6
-      },
-      rate: {
-        delay: 0.1,
-        quantity: 100
-      },
-      size: {
-        width: 0,
-        height: 0
-      }
-    }
-  };
-
-  toggleStatus(status);
-});
 
  }else{
   if(afteruser.toUpperCase()!==capital && afteruser!==undefined && afteruser!==null){
     alert("Wrong Answer . Just only one step left to Win the Game");
-    
- }else if(afteruser===undefined){
+ 
+ }/*else if(afteruser===undefined){
    alert("Answer your Question First to Get the Diamond Crown and Won the Game");
  }else if(afteruser===null){
   alert("Answer your Question First to Get the Diamond Crown and Won the Game. Do not Press the Cancel BUTTON");
- }
+ }*/
  }
 });
 console.log(afteruser);
@@ -1531,7 +1356,7 @@ drawSprites();
 if(diamond.x===25000){
   fill("red");
   textSize(15);
-  text("What is the Capital of USA ?",width/2.14,height/2.4);
+  text("What is the Capital of USA",width/2.14,height/2.4);
 }
 
 if(robot.isTouching(blocktoblock)===true){
@@ -1750,164 +1575,6 @@ playWin(){
     $("canvas").remove(); 
    // container.hide();
     this.button.hide();
-
-    function confetti(containerid, count) {
-      var PREMIUM = true;
-      var container = document.getElementById(containerid || "container"),
-        containerRect = container.getBoundingClientRect(),
-        containerWidth = containerRect.width,
-        containerHeight = containerRect.height,
-        colors = PREMIUM ? ["a67c00", "bf9b30", "ffbf00", "ffcf40", "ffdc73"]
-          : ["DF4678", "00CECB", "995AE2", "FFC857", "CA3B4E"],
-        colorsLength = colors.length,
-        delta = 100,
-        frag = document.createDocumentFragment();
-    
-      count = count || 100;
-    
-      for (i = 0; i < count; i++) {
-        var div = document.createElement("div");
-        div.classList.add("paper");
-        div.style.backgroundImage =
-          "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='%23" +
-          colors[get_random_number(0, colorsLength - 1)] +
-          "' d='M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z'/%3E%3C/svg%3E\")";
-    
-        var size =
-          i > count * 0.95 ? get_random_number(65, 128) : get_random_number(16, 32);
-    
-        div.style.opacity = count / (i * 2) + 0.5;
-        div.style.width = size + "px";
-        div.style.height = size + "px";
-        div.style.zIndex = i + 100;
-    
-        if (i > count * 0.9) {
-          div.style.filter = "blur(" + Math.abs(i / 20) + "px)";
-          div.style.opacity = 0.4;
-        }
-    
-        // Animation motion path
-        var firstPathResult = generate_first_path();
-        var firstPath = path_to_bezier(firstPathResult.path);
-        var lastPath = path_to_bezier(generate_last_path(firstPathResult.endPoint));
-    
-        // Time for animation
-        let firstTime = get_random_number(500, 15000, 500) / 1000;
-    
-        // Caculate last time base on distance
-        let lastTime =
-          2 *
-            Math.min(Math.abs(firstPathResult.endPoint[1] / containerHeight), 0.8) +
-          get_random_number(-5, 5) / 10;
-        lastTime = Math.max(firstTime, lastTime);
-    
-        // Make animation
-        new TimelineMax()
-          .to(div, firstTime, {
-            bezier: { values: firstPath, type: "cubic" },
-            ease: Power1.easeOut,
-            rotationZ: "+=" + get_random_number(360, 1080)
-          })
-          .to(div, lastTime, {
-            bezier: { values: lastPath, type: "cubic" },
-            ease: Power1.easeIn,
-            rotationZ: "+=" + get_random_number(360, 1080),
-            onComplete: function() {
-              //          console.log(this);
-              this.target.remove();
-            }
-          });
-    
-        frag.appendChild(div);
-      }
-      container.appendChild(frag);
-    
-      function generate_first_path() {
-        //const startPoint = [get_random_number(-delta, 0), get_random_number(0, delta)];
-        const startPoint = [containerWidth / 2, containerHeight / 2];
-        const endPointY = get_random_number(-containerWidth * 4 / 5, 20);
-        let endPointX = containerWidth / 2;
-        if (Math.abs(endPointY) > containerHeight / 2) {
-          endPointX = get_random_number(containerWidth / 4, containerWidth * 3 / 4);
-        } else {
-          endPointX = get_random_number(0, containerWidth);
-        }
-        const endPoint = [endPointX, endPointY];
-        const controlPoint1 = [
-          get_random_number(startPoint[0] - delta / 2, startPoint[0]),
-          get_random_number(startPoint[1] + delta / 2, startPoint[1] + 2 * delta)
-        ];
-        const controlPoint2 = [
-          get_random_number(endPoint[0] - delta, endPoint[0]),
-          get_random_number(endPoint[1] + delta, endPoint[1] - delta)
-        ];
-        return {
-          path: `M ${startPoint.join(",")} C ${controlPoint1.join(",")} ${controlPoint2.join(",")} ${endPoint.join(",")}`,
-          endPoint: endPoint
-        };
-      }
-    
-      function generate_last_path(startPoint) {
-        let endPointX = 0;
-        if (Math.abs(startPoint[1]) > containerHeight / 2) {
-          endPointX = get_random_number(
-            startPoint[0] - delta,
-            startPoint[0] + delta
-          );
-        } else {
-          endPointX = get_random_number(
-            startPoint[0] - delta / 2,
-            startPoint[0] + delta / 2
-          );
-        }
-        const endPoint = [endPointX, get_random_number(0, delta)];
-        const controlPoint1 = [
-          get_random_number(startPoint[0] - delta, startPoint[0] + delta),
-          get_random_number(startPoint[1], startPoint[1] + delta)
-        ];
-        const controlPoint2 = [
-          get_random_number(endPoint[0] - delta, endPoint[0] + delta),
-          get_random_number(endPoint[1] + delta, endPoint[1])
-        ];
-        return `M ${startPoint.join(",")} C ${controlPoint1.join(",")} ${controlPoint2.join(",")} ${endPoint.join(",")}`;
-      }
-    
-      function get_random_number(start, end, step = 1) {
-        const numberOfVariants = Math.floor((end - start) / step + 1);
-        return Math.floor(Math.random() * numberOfVariants) * step + start;
-      }
-    }
-    
-    function path_to_bezier(path) {
-      //points exported from DrawScript : Bezier Points Array (anchor, control, control, anchor)
-      var data = Snap.path.toCubic(path);
-      (dataLength = data.length),
-        (points = []), //holds our series of x/y values for anchors and control points,
-        (pointsString = data.toString());
-    
-      // convert cubic data to GSAP bezier
-      for (var i = 0; i < dataLength; i++) {
-        var seg = data[i];
-        if (seg[0] === "M") {
-          // move (starts the path)
-          var point = {};
-          point.x = seg[1];
-          point.y = seg[2];
-          points.push(point);
-        } else {
-          // seg[0] === "C" (Snap.path.toCubic should return only curves after first point)
-          for (var j = 1; j < 6; j += 2) {
-            var point = {};
-            point.x = seg[j];
-            point.y = seg[j + 1];
-            points.push(point);
-          }
-        }
-      }
-    
-      return points;
-    
-    }
     
     
     setTimeout(confetti(),5000)
@@ -1933,16 +1600,16 @@ playOver(){
         var utterance8 = new SpeechSynthesisUtterance('So Sorry!! ,'+usertaking.toLowerCase()+',, You have lost the Game with a score of ,,  '+points_score+', points'+'   ,,,  Share your score to your friends and invite them through ,, Whatsapp or Facebook to get a chance to Play the Game.');
         utterance8.voice = voices5[3];
         utterance8.lang = voices5[4].lang;
-        utterance8.volume=1;
+        utterance8.volume=0.6;
         window.speechSynthesis.speak(utterance8);
       }
     }else if(points_score!==undefined){ 
       window.speechSynthesis.onvoiceschanged = function() {
         var voices6 = window.speechSynthesis.getVoices()
         var utterance9 = new SpeechSynthesisUtterance('So Sorry , You have lost the Game with a score of ,,  '+points_score+', points'+'    ,,  Share your score to your friends and invite them through ,, Whatsapp or Facebook to get a chance to Play the Game.');
-        utterance9.voice = voices6[3];
+        utterance9.voice = voices6[8];
         utterance9.lang = voices6[4].lang;
-        utterance9.volume=1;
+        utterance9.volume=0.6;
         window.speechSynthesis.speak(utterance9);
       }    
   }
