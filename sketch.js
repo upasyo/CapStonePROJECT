@@ -37,7 +37,7 @@ var gameSound;
 var healthy=localStorage.setItem("health_score",15);
 var pointsscore=localStorage.setItem("points_score",100);*/
 //console.log(state+"state")
-var gameState=0;
+var gameState=2;
  function preload(){
 gameSound=loadSound("sound/synthwave-vintage-future-synth-80s-retro-game-futuristic-music-16535.mp3");
 score_sound=loadSound("sound/scoreincrease.mp3");
