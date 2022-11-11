@@ -600,7 +600,8 @@ width:40px;
       </div>
     </div>
     <div class="contact-form-wrapper">
-      <form onsubmit="send(); reset(); return false">
+      <form id="my-form"  method="POST" 
+      action="https://script.google.com/macros/s/AKfycbzcjdxlBV9hS3iewggpOsMEJlYSH9O0giRzE4JgfH1mxC73uWmWIfFVJ1SY_WMMT6lquA/exec">
         <div class="form-item">
           <input id="input" type="text" name="sender" required>
           <label>Name:</label>
@@ -630,12 +631,29 @@ width:40px;
   </div>
   
 </section>
+<script>
+  window.addEventListener("load", function() {
+  const form = document.getElementById('my-form');
+  form.addEventListener("submit", function(e) {
+    e.preventDefault();
+    const data = new FormData(form);
+    const action = e.target.action;
+    fetch(action, {
+      method: 'POST',
+      body: data,
+    })
+    .then(() => {
+      alert("You Have Successfully Submitted the form !");
+    })
+  });
+});
 
+</script>
 
 <script src="https://smtpjs.com/v3/smtp.js">
 </script>
 <script>
-  $("#after-submit").html("<center><img src='https://i.postimg.cc/GhTqQhys/images-removebg-preview.png' width='350px' height='250px'/><h3>Sent Successfully</h3></center>");
+  $("#after-submit").html("<center><img src='https://uxwing.com/wp-content/themes/uxwing/download/48-checkmark-cross/success-green-check-mark.png' width='250px' height='250px'/><h3>Sent Successfully</h3></center>");
   $("#after-submit").hide();
  
   if(document.getElementById("input").value)
@@ -661,22 +679,9 @@ width:40px;
 
 function send(){
 
-  Email.send({
-    //SecureToken:"d87267da-eefc-47d2-9935-1604daba5b39",
-    Host : "smtp.gmail.com",
-    Username : "sites.upasyo@gmail.com",
-    Password : "pyhvcfkypygcyoco",
-    To : "sites.upasyo@gmail.com",
-    From :document.getElementById("email").value ,
-    Subject : "Contact Request from Upasyo's Gaming Site by "+document.getElementById("input").value.toUpperCase(),
-    Body :"Email:- <b>"+document.getElementById("email").value+"</b>"+
-    "<br>"+"Name :- <b>"+document.getElementById("input").value.toUpperCase()+"</b>"+
-    "<br>"+"Text Message :- <b>"+document.getElementById("textarea").value+"</b> "
-}).then(
-  sent()
-)
+return false;
 }
-  
+
 function sent(){
  $(".form-item").hide();
  $("#button").hide();
