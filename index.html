@@ -643,7 +643,7 @@ width:40px;
       body: data,
     })
     .then(() => {
-      alert("You Have Successfully Submitted the form !");
+      sent()
     })
   });
 });
@@ -653,7 +653,7 @@ width:40px;
 <script src="https://smtpjs.com/v3/smtp.js">
 </script>
 <script>
-  $("#after-submit").html("<center><img src='https://uxwing.com/wp-content/themes/uxwing/download/48-checkmark-cross/success-green-check-mark.png' width='250px' height='250px'/><h3>Sent Successfully</h3></center>");
+  $("#after-submit").html("<center><img src='https://uxwing.com/wp-content/themes/uxwing/download/48-checkmark-cross/success-green-check-mark.png' width='280px' height='250px'/><h3>Sent Successfully</h3></center>");
   $("#after-submit").hide();
  
   if(document.getElementById("input").value)
@@ -674,13 +674,6 @@ width:40px;
       }, 1250 );
     }
   });
-
-
-
-function send(){
-
-return false;
-}
 
 function sent(){
  $(".form-item").hide();
