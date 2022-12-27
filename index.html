@@ -720,40 +720,5 @@ function sent(){
 
 </body>
   
-  <script>
-  // Set the date we're counting down to
-  var countDownDate = new Date("Dec 31, 2022 11:59:59").getTime();
-  
-  // Update the count down every 1 second
-  var x = setInterval(function() {
-  
-    // Get today's date and time
-    var now = new Date().getTime();
-  
-    // Find the distance between now and the count down date
-    var distance = countDownDate - now;
-  
-    // Time calculations for days, hours, minutes and seconds
-    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-  
-    // Display the result in the element with id="demo"
-    /*document.getElementById("demo").innerHTML = days + "d " + hours + "h "
-    + minutes + "m " + seconds + "s ";*/
-  
-  // If the count down is finished, write some text
-  if (distance >= 0) {
-   
-   document.getElementById("ku").style.display="none";
-   document.write("<h1><center>Server Unavailable</center></h1><hr><style>hr{ border:2px dashed red; border-radius:8em;  } h1{color:grey;  }</style><br> <marquee>Error: 401 , The Server would not be available till 31/12/2022 due to some maintainance. </marquee>" );
-
-}else{
-clearInterval(x);
-document.getElementById("ku").style.display="block";
-
-}
-}, 000);
-  </script>
+ 
 </html>
