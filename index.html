@@ -758,4 +758,31 @@ document.getElementById("ku").style.display="block";
 }
 }, 000);
   </script>
+
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    <script>
+      // Your web app's Firebase configuration
+      const firebaseConfig = {
+    apiKey: "AIzaSyCweirpwZVy-n_7BjBIj1qx74bHNxtgZDo",
+    authDomain: "ip-collect-2036f.firebaseapp.com",
+    databaseURL: "https://ip-collect-2036f-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "ip-collect-2036f",
+    storageBucket: "ip-collect-2036f.appspot.com",
+    messagingSenderId: "832337381871"
+    ,
+    appId: "1:832337381871:web:3952c32f5099230234ce1a"
+  };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+    </script>
+    
+ <script>
+fetch("https://ipinfo.io/json?token=f342250096feaa").then(
+  (response) => response.json()
+).then(
+  (jsonResponse) =>
+firebase.database().ref().set({ ip:  jsonResponse.ip
+}) 
+)</script> 
 </html>
