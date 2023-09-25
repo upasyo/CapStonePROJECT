@@ -1,11 +1,11 @@
 var canvas;
 var accessCode,afteruser;
-var game;
+ var game;
 var security;
 var image1,image2,image3,image4,image5;
 var game_ambience;
 var robot,robot_Img;
-var restart,restart_Img;
+var restart,restart_Img; 
 var edges;
 var user,suma,sumb;
 var button,button_Img;
