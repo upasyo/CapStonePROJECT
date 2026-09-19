@@ -468,11 +468,11 @@
 $("#whatsapp_share_button").click(function(){
   console.log(points_score);
  if(usertaking!==undefined && points_score!==undefined){
- var a="https://api.whatsapp.com/send?text= Hi! *"+usertaking.toUpperCase()+"* has won the Diamond as well as the Game with a score of *"+points_score+"* points . You Could also stand a chance to win the game. Click on the Link below to Play the Game:- https://bit.ly/DiamondCrownGame";
+ var a="https://api.whatsapp.com/send?text= Hi! *"+usertaking.toUpperCase()+"* has won the  as well as the Game with a score of *"+points_score+"* points . You Could also stand a chance to win the game. Click on the Link below to Play the Game:- https://upasyo.github.io/CapStonePROJECT/";
  var btn1=document.getElementById("whatsapp_share_button");
  btn1.setAttribute("href",a);
   }else if(usertaking==undefined ){
-    var b="https://api.whatsapp.com/send?text= Hi! I have won the Diamond as well as the Game with a score of *"+points_score+"* points . You Could also stand a chance to win the game. Click on the Link below to Play the Game:- https://bit.ly/DiamondCrownGame";
+    var b="https://api.whatsapp.com/send?text= Hi! I have won the Diamond as well as the Game with a score of *"+points_score+"* points . You Could also stand a chance to win the game. Click on the Link below to Play the Game:- https://upasyo.github.io/CapStonePROJECT/";
  var btn2=document.getElementById("whatsapp_share_button");
  btn2.setAttribute("href",b);
   }
@@ -482,11 +482,11 @@ $("#whatsapp_share_button").click(function(){
 $("#facebook_share_button").click(function(){
   console.log(points_score);
  if(usertaking!==undefined && usertaking!==null && points_score!==undefined){
- var c="https://www.facebook.com/sharer/sharer.php?u=Hi! "+usertaking.toUpperCase()+" has won the Diamond as well as the Game with a score of "+points_score+" . You Could also stand a chance to win the game. Click on the Link below to Play the Game:- https://bit.ly/DiamondCrownGame";
+ var c="https://www.facebook.com/sharer/sharer.php?u=Hi! "+usertaking.toUpperCase()+" has won the Diamond as well as the Game with a score of "+points_score+" . You Could also stand a chance to win the game. Click on the Link below to Play the Game:- https://upasyo.github.io/CapStonePROJECT/";
  var btn3=document.getElementById("facebook_share_button");
  btn3.setAttribute("href",c);
   }else if(usertaking==undefined && usertaking==null ){
-    var d="https://www.facebook.com/sharer/sharer.php?u=Hi! I have won the Diamond as well as the Game with a score of "+points_score+" . You Could also stand a chance to win the game. Click on the Link below to Play the Game:- https://bit.ly/DiamondCrownGame";
+    var d="https://www.facebook.com/sharer/sharer.php?u=Hi! I have won the Diamond as well as the Game with a score of "+points_score+" . You Could also stand a chance to win the game. Click on the Link below to Play the Game:- https://upasyo.github.io/CapStonePROJECT/";
  var btn4=document.getElementById("facebook_share_button");
  btn4.setAttribute("href",d);
   }
